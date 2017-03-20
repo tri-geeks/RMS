@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FAB4D5B-8500-4ECA-88C6-7F7F8E55E5F9}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TG.RMSCLIENT.WEB</RootNamespace>
+    <AssemblyName>TG.RMSCLIENT.WEB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\FoodMenuController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="assets\css\ace-ie.min.css" />
+    <Content Include="assets\css\ace-part2.min.css" />
+    <Content Include="assets\css\ace-rtl.min.css" />
+    <Content Include="assets\css\ace-skins.min.css" />
+    <Content Include="assets\css\ace.min.css" />
+    <Content Include="assets\css\bootstrap-colorpicker.min.css" />
+    <Content Include="assets\css\bootstrap-datepicker.css" />
+    <Content Include="assets\css\bootstrap-datepicker3.min.css" />
+    <Content Include="assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="assets\css\bootstrap-duallistbox.min.css" />
+    <Content Include="assets\css\bootstrap-editable.min.css" />
+    <Content Include="assets\css\bootstrap-multiselect.min.css" />
+    <Content Include="assets\css\bootstrap-timepicker.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\chosen.min.css" />
+    <Content Include="assets\css\colorbox.min.css" />
+    <Content Include="assets\css\daterangepicker.min.css" />
+    <Content Include="assets\css\dropzone.min.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\fonts.googleapis.com.css" />
+    <Content Include="assets\css\fullcalendar.min.css" />
+    <Content Include="assets\css\jquery-ui.custom.min.css" />
+    <Content Include="assets\css\jquery-ui.min.css" />
+    <Content Include="assets\css\jquery.gritter.min.css" />
+    <Content Include="assets\css\prettify.min.css" />
+    <Content Include="assets\css\select2.min.css" />
+    <Content Include="assets\css\slick.css" />
+    <Content Include="assets\css\theme-color\blue-theme.css" />
+    <Content Include="assets\css\theme-color\dark-red-theme.css" />
+    <Content Include="assets\css\theme-color\default-theme.css" />
+    <Content Include="assets\css\theme-color\green-theme.css" />
+    <Content Include="assets\css\theme-color\orange-theme.css" />
+    <Content Include="assets\css\theme-color\pink-theme.css" />
+    <Content Include="assets\css\theme-color\purple-theme.css" />
+    <Content Include="assets\css\theme-color\red-theme.css" />
+    <Content Include="assets\css\theme-color\violet-theme.css" />
+    <Content Include="assets\css\theme-color\yellow-theme.css" />
+    <Content Include="assets\css\ui.jqgrid.min.css" />
+    <Content Include="assets\CustomCSS\CSS1.css" />
+    <Content Include="assets\CustomCSS\JQCSS1.css" />
+    <Content Include="assets\font-awesome\4.5.0\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\._fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\._glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\avatars\avatar.png" />
+    <Content Include="assets\images\avatars\avatar1.png" />
+    <Content Include="assets\images\avatars\avatar2.png" />
+    <Content Include="assets\images\avatars\avatar3.png" />
+    <Content Include="assets\images\avatars\avatar4.png" />
+    <Content Include="assets\images\avatars\avatar5.png" />
+    <Content Include="assets\images\avatars\profile-pic.jpg" />
+    <Content Include="assets\images\avatars\user.jpg" />
+    <Content Include="assets\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="assets\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="assets\images\email\email1.png" />
+    <Content Include="assets\images\email\email2.png" />
+    <Content Include="assets\images\email\email3.png" />
+    <Content Include="assets\images\email\email4.png" />
+    <Content Include="assets\images\gallery\image-1.jpg" />
+    <Content Include="assets\images\gallery\image-2.jpg" />
+    <Content Include="assets\images\gallery\image-3.jpg" />
+    <Content Include="assets\images\gallery\image-4.jpg" />
+    <Content Include="assets\images\gallery\image-5.jpg" />
+    <Content Include="assets\images\gallery\image-6.jpg" />
+    <Content Include="assets\images\gallery\thumb-1.jpg" />
+    <Content Include="assets\images\gallery\thumb-2.jpg" />
+    <Content Include="assets\images\gallery\thumb-3.jpg" />
+    <Content Include="assets\images\gallery\thumb-4.jpg" />
+    <Content Include="assets\images\gallery\thumb-5.jpg" />
+    <Content Include="assets\images\gallery\thumb-6.jpg" />
+    <Content Include="assets\images\placeholder\165x90.png" />
+    <Content Include="assets\images\placeholder\255x150.png" />
+    <Content Include="assets\images\placeholder\530x270.png" />
+    <Content Include="assets\images\placeholder\550x280.png" />
+    <Content Include="assets\img\about-us\abtus-img-1.png" />
+    <Content Include="assets\img\about-us\abtus-img-2.png" />
+    <Content Include="assets\img\about-us\abtus-img-4.png" />
+    <Content Include="assets\img\about-us\abtus-img-5.png" />
+    <Content Include="assets\img\about-us\abtus-img-6.png" />
+    <Content Include="assets\img\banner-ads.jpg" />
+    <Content Include="assets\img\blog-banner.jpg" />
+    <Content Include="assets\img\chef\chef-2.jpg" />
+    <Content Include="assets\img\chef\chef-3.jpg" />
+    <Content Include="assets\img\chef\chef-5.jpg" />
+    <Content Include="assets\img\chef\chef-6.jpg" />
+    <Content Include="assets\img\counter-bg.jpg" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\gallery\big\1.jpg" />
+    <Content Include="assets\img\gallery\big\2.jpg" />
+    <Content Include="assets\img\gallery\big\3.jpg" />
+    <Content Include="assets\img\gallery\big\4.jpg" />
+    <Content Include="assets\img\gallery\big\5.jpg" />
+    <Content Include="assets\img\gallery\big\6.jpg" />
+    <Content Include="assets\img\gallery\big\7.jpg" />
+    <Content Include="assets\img\gallery\big\8.jpg" />
+    <Content Include="assets\img\gallery\big\9.jpg" />
+    <Content Include="assets\img\gallery\fancybox_buttons.png" />
+    <Content Include="assets\img\gallery\fancybox_loading%402x.gif" />
+    <Content Include="assets\img\gallery\fancybox_loading.gif" />
+    <Content Include="assets\img\gallery\fancybox_overlay.png" />
+    <Content Include="assets\img\gallery\fancybox_sprite%402x.png" />
+    <Content Include="assets\img\gallery\fancybox_sprite.png" />
+    <Content Include="assets\img\gallery\small\1.jpg" />
+    <Content Include="assets\img\gallery\small\2.jpg" />
+    <Content Include="assets\img\gallery\small\3.jpg" />
+    <Content Include="assets\img\gallery\small\4.jpg" />
+    <Content Include="assets\img\gallery\small\5.jpg" />
+    <Content Include="assets\img\gallery\small\6.jpg" />
+    <Content Include="assets\img\gallery\small\7.jpg" />
+    <Content Include="assets\img\gallery\small\8.jpg" />
+    <Content Include="assets\img\gallery\small\9.jpg" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\menu\item-1.jpg" />
+    <Content Include="assets\img\menu\item-10.jpg" />
+    <Content Include="assets\img\menu\item-2.jpg" />
+    <Content Include="assets\img\menu\item-3.jpg" />
+    <Content Include="assets\img\menu\item-4.jpg" />
+    <Content Include="assets\img\menu\item-5.jpg" />
+    <Content Include="assets\img\menu\item-6.jpg" />
+    <Content Include="assets\img\menu\item-7.jpg" />
+    <Content Include="assets\img\menu\item-8.jpg" />
+    <Content Include="assets\img\menu\item-9.jpg" />
+    <Content Include="assets\img\news\1.jpg" />
+    <Content Include="assets\img\news\2.jpg" />
+    <Content Include="assets\img\news\3.jpg" />
+    <Content Include="assets\img\news\4.jpg" />
+    <Content Include="assets\img\plus.png" />
+    <Content Include="assets\img\preloader.gif" />
+    <Content Include="assets\img\slider\4.jpg" />
+    <Content Include="assets\img\slider\5.jpg" />
+    <Content Include="assets\img\slider\3.jpg" />
+    <Content Include="assets\img\slider\1.jpeg" />
+    <Content Include="assets\img\slider\2.jpg" />
+    <Content Include="assets\img\slider\6.jpg" />
+    <Content Include="assets\img\slider\7.jpg" />
+    <Content Include="assets\img\testimonial-1.png" />
+    <Content Include="assets\img\testimonial-2.png" />
+    <Content Include="assets\img\testimonial-3.png" />
+    <Content Include="assets\img\testimonial-bg.jpg" />
+    <Content Include="assets\js\bootstrap-datepicker.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\jquery.counterup.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\slick.js" />
+    <Content Include="assets\js\waypoints.js" />
+    <Content Include="assets\ModalCS\bootstrap-dialog.css" />
+    <Content Include="assets\ModalJS\bootstrap-dialog.js" />
+    <Content Include="assets\ModalJS\run_prettify.js" />
+    <Content Include="assets\ModalJS\Tablepaging.js" />
+    <Content Include="assets\PageScript\Account\LogIn.js" />
+    <Content Include="assets\PageScript\CommonScript\JQGCommon.js" />
+    <Content Include="assets\PageScript\CommonScript\mainfunction.js" />
+    <Content Include="assets\PageScript\CommonScript\SSRL.MAIN.js" />
+    <Content Include="assets\PageScript\CommonScript\SSRL.STYLE.js" />
+    <Content Include="assets\PageScript\DashBoard\MenuInfo.js" />
+    <Content Include="assets\PageScript\DemoSC\DemoJQ.js" />
+    <Content Include="assets\PageScript\DemoSC\SubgridDemo.js" />
+    <Content Include="assets\PageScript\EnergyConsumption\EnergySource.js" />
+    <Content Include="assets\PageScript\EnergyConsumption\EnergyUnit.js" />
+    <Content Include="assets\PageScript\FG-Settings\FG-Category.js" />
+    <Content Include="assets\PageScript\FG-Settings\FG-Item.js" />
+    <Content Include="assets\PageScript\FurnaceSettings\Furnace.js" />
+    <Content Include="assets\PageScript\FurnaceSettings\Station.js" />
+    <Content Include="assets\PageScript\Production\DailyProduction.js" />
+    <Content Include="assets\PageScript\Production\ShiftWiseProdSummary.js" />
+    <Content Include="assets\PageScript\Production\ShiftWiseProduction.js" />
+    <Content Include="assets\PageScript\QualitySettings\Quality.js" />
+    <Content Include="assets\PageScript\Report\CreateReport.js" />
+    <Content Include="assets\PageScript\Report\ViewReport.js" />
+    <Content Include="assets\PageScript\ShiftSettings\ShiftInformation.js" />
+    <Content Include="assets\PageScript\UserSettings\MenuPermission.js" />
+    <Content Include="assets\PageScript\UserSettings\UserInformation.js" />
+    <Content Include="assets\ReportTreeMenu\jquery.easytree.js" />
+    <Content Include="assets\ReportTreeMenu\jquery.easytree.min.js" />
+    <Content Include="assets\ReportTreeMenu\skin-lion\icons.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-lion\loading.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-lion\ui.easytree.css" />
+    <Content Include="assets\ReportTreeMenu\skin-win7\icons.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-win7\loading.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-win7\ui.easytree.css" />
+    <Content Include="assets\ReportTreeMenu\skin-win7\vista_colors.txt" />
+    <Content Include="assets\ReportTreeMenu\skin-win8\icons.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-win8\loading.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-win8\ui.easytree.css" />
+    <Content Include="assets\ReportTreeMenu\skin-xp\icons-rtl.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-xp\icons.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-xp\loading.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-xp\ui.easytree.css" />
+    <Content Include="assets\ReportTreeMenu\skin-xp\vline-rtl.gif" />
+    <Content Include="assets\ReportTreeMenu\skin-xp\vline.gif" />
+    <Content Include="assets\swf\flashExport.swf" />
+    <Content Include="assets\videos\render-final_1.mp4" />
+    <Content Include="assets\videos\render-img.mp4" />
+    <Content Include="CSS\style.css" />
+    <Content Include="Global.asax" />
+    <Content Include="image\ajax-loader %281%29.gif" />
+    <Content Include="image\ajax-loader.gif" />
+    <Content Include="image\facebook.gif" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\._fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\._fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\._fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\._FontAwesome.otf" />
+    <Content Include="assets\fonts\._glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\._glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\._glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\._glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scss\._base" />
+    <Content Include="scss\._layouts" />
+    <Content Include="scss\._modules" />
+    <Content Include="scss\._style.scss" />
+    <Content Include="scss\base\.__base.scss" />
+    <Content Include="scss\base\.__mixins.scss" />
+    <Content Include="scss\base\.__variables.scss" />
+    <Content Include="scss\base\_base.scss" />
+    <Content Include="scss\base\_mixins.scss" />
+    <Content Include="scss\base\_variables.scss" />
+    <Content Include="scss\layouts\.__footer.scss" />
+    <Content Include="scss\layouts\.__header.scss" />
+    <Content Include="scss\layouts\.__nav.scss" />
+    <Content Include="scss\layouts\_footer.scss" />
+    <Content Include="scss\layouts\_header.scss" />
+    <Content Include="scss\layouts\_nav.scss" />
+    <Content Include="scss\modules\.__buttons.scss" />
+    <Content Include="scss\modules\.__responsive.scss" />
+    <Content Include="scss\modules\.__sections.scss" />
+    <Content Include="scss\modules\.__theme-color.scss" />
+    <Content Include="scss\modules\.__typography.scss" />
+    <Content Include="scss\modules\_buttons.scss" />
+    <Content Include="scss\modules\_responsive.scss" />
+    <Content Include="scss\modules\_sections.scss" />
+    <Content Include="scss\modules\_theme-color.scss" />
+    <Content Include="scss\modules\_typography.scss" />
+    <Content Include="scss\style.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BGW.MANAGER\BGW.MANAGER.csproj">
+      <Project>{fcd55f4d-3d7a-4d02-9090-ce01eb3fed8b}</Project>
+      <Name>BGW.MANAGER</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BGW.MODEL\BGW.MODEL.csproj">
+      <Project>{e5bf446b-1bfb-4ff5-8bf6-a041f23330dd}</Project>
+      <Name>BGW.MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSRL.DAL\SSRL.DAL.csproj">
+      <Project>{5ad10932-1b50-49f7-b5c3-54ac9f99bacf}</Project>
+      <Name>SSRL.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\ReportTreeMenu\skin-lion\icons-lion.psp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\DailyProduction.rdl" />
+    <Content Include="Reports\Your Monthly Attendance%28New%29.rdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutAdminPanel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FoodMenu\FoodMenuA.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DashBoard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\videos\render-final_1.html.tmp" />
+    <Content Include="assets\videos\render-img.html.tmp" />
+    <Content Include="assets\videos\render-img.mp4.tmp" />
+    <None Include="Properties\PublishProfiles\TRMSCLIENT.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58702</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58702/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

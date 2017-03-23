@@ -16,5 +16,10 @@ namespace TG.RMSCLIENT.WEB.Controllers
             return View();
         }
 
+
+        public ActionResult ViewMenuList()
+        {
+            return View();
+        }
     }
 }

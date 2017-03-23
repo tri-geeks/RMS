@@ -20,6 +20,18 @@
     <!-- Theme color -->
     <link id="switcher" href="~/assets/css/theme-color/default-theme.css" rel="stylesheet">
 
+
+    @* ------------------Script library---------------- *@
+    @*<script src="~/Scripts/js/jquery-1.11.0.min.js"></script>*@
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/JavascriptFile/js/i18n/grid.locale-en.js"></script>
+    <script src="~/JavascriptFile/js/jquery.jqGrid.min.js"></script>
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/JavascriptFile/css/ui.jqgrid-bootstrap.css" rel="stylesheet" />
+    <script src="~/JavascriptFile/bootstrap.min.js"></script>
+    @* ----------------------------------------------- *@
+
+
     <!-- Main style sheet -->
     <link href="~/CSS/style.css" rel="stylesheet">
 
@@ -32,6 +44,11 @@
         .navbar-admin {
             background-color: #444;
             padding: 10px 0;
+        }
+        body {
+            font-family: "tahoma", serif;
+            color: #333333;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -62,7 +79,9 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">SETTINGS <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="blog-archive.html">MENU CATEGORY</a></li>
+                                <li><a href="/Settings/UserInformation">USER INFORMATON</a></li>
+                                <li><a href="/Settings/MenuPermission">PERMISSION</a></li>
+                                <li><a href="/Settings/MenuCategory">MENU CATEGORY</a></li>
                                 <li><a href="blog-single.html">BLOG DETAILS</a></li>
                                 <li><a href="404.html">404 PAGE</a></li>
                             </ul>
@@ -71,6 +90,7 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">MENU <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/FoodMenu/FoodMenuA">CREATE MENU</a></li>
+                                <li><a href="/FoodMenu/ViewMenuList">VIEW MENU</a></li>
                                 <li><a href="blog-single.html">MENU LIST</a></li>
                                 <li><a href="404.html">404 PAGE</a></li>
                             </ul>
@@ -127,9 +147,9 @@
     </footer>
     <!-- End Footer -->
     <!-- jQuery library -->
-    <script src="~/assets/js/jquery.min.js"></script>
+    @*<script src="~/assets/js/jquery.min.js"></script>*@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="~/assets/js/bootstrap.js"></script>
+    @*<script src="~/assets/js/bootstrap.js"></script>*@
     <!-- Slick slider -->
     <script type="text/javascript" src="~/assets/js/slick.js"></script>
     <!-- Counter -->

@@ -1,27 +1,60 @@
 ﻿var JQMenuList;
+var obj = new Suraya();
+var msg = new UIStyle();
 $(function () {
     GridName = 'JQMenuList';
     Gridfooter = 'JQMenuPager';
-
+    LoadUser();
     ViewControl(true, false, false, false, false, false)
     JQMenuList = $('#JQMenuList');
+   
+    //****************Submit*********************
+    $('form').submit(function () {
+        var formdata = new FormData(this);
+        var menulist = $('#JQMenuList').getRowData();
+        //formdata.append('UserID', $('#UserID').val());
+        obj.addListWithForm(formdata, menulist, 'menuList');
+        obj.Save({
+            url: rootPath + '/Settings/MenuPermissionC',
+            form: formdata
+        });
+        JQMenuList.trigger("reloadGrid");
+    });
+
+    //***************Leave Event********************   
+    $('#UserID').change(function () {
+        var userid = $('#UserID').val();
+        $("#JQMenuList").setGridParam({ postData: { id: userid } });
+        $("#JQMenuList").trigger('reloadGrid', [{ id: userid }]);
+    })
     MenuList(JQMenuList);
 });
 
 function MenuList(JQMenuList) {
-    JQMenuList.jqGrid({
-        url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
-        mtype: "GET",
+    JQMenuList.jqGrid({        
+        url: rootPath + '/Settings/GetMenuListBuUserID',
+        postData: { id: '0' },
+        datatype: "json",
+        mtype: 'GET',
         styleUI: 'Bootstrap',
-        datatype: "jsonp",
-        colModel: [
-            { label: 'OrderID', name: 'OrderID', key: true, width: 75, hidden: true },
-            { label: 'Customer ID', name: 'CustomerID', width: 150 },
-            { label: 'Order Date', name: 'OrderDate', width: 150, editable: true },
-            { label: 'Freight', name: 'Freight', width: 150, editable: true },
-            { label: 'Ship Name', name: 'ShipName', width: 150, editable: true },
+        colModel: [            
+            { label: 'PermissionID', name: 'PermissionID', width: 100, hidden: true },
+            { label: 'UserID', name: 'UserID', width: 150, hidden: true },
+            { label: 'MenuID', name: 'MenuID', width: 250, key: true, hidden: true },
+            { label: 'MenuName', name: 'MenuName', width: 250, hidden: true },
+            { label: 'DisplayName', name: 'DisplayName', width: 250 },
             {
-                label: 'Commit|Cancel',
+                label: 'Authorization', name: 'Authorization', width: 250,
+                sortable: true,
+                align: 'center',
+                editable: true,
+                cellEdit: true,
+                edittype: 'select',
+                formatter: 'select',
+                editoptions: { value: getAllSelectOptions() }
+            },
+            {
+                label:'Commit|Cancel',
                 name: 'LinkButton',
                 formatter: function (cellvalue, options, rowObject) {
                     return "<a href='#' style='align:center'><span class='glyphicon glyphicon-ok'  style='color:green'></a>|<a href='#' class='glyphicon glyphicon-remove' style='color:red'></a>";
@@ -49,4 +82,19 @@ function MenuList(JQMenuList) {
             }
         }
     });
+}
+
+function LoadUser() {
+    obj.loaddropV({
+        url: rootPath+ '/Settings/CboUser',
+        values: '',
+        select:$('#UserID')
+    });
+}
+
+function getAllSelectOptions() {
+    var states = {
+        '1': 'No Authorization','3': 'Full Authorization'
+    };
+    return states;
 }

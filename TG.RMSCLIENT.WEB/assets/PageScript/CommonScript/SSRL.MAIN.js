@@ -15,20 +15,20 @@
             async:false,
             success:function(data){
                 st.hideloading();
-                setTimeout(function () {
-                    if (data =='success')
-                        st.success();
-                    else
-                        st.error();
-                }, 1000);
+                //setTimeout(function () {
+                //    if (data =='success')
+                //        st.success();
+                //    else
+                //        st.error();
+                //}, 1000);
                 
             return false;
             },
             error: function () {
                 st.hideloading();
-                setTimeout(function () {
-                    st.error();
-                }, 1000);
+                //setTimeout(function () {
+                //    st.error();
+                //}, 1000);
             	
             	return false;
             }

@@ -30,8 +30,9 @@
     <link href="~/JavascriptFile/css/ui.jqgrid-bootstrap.css" rel="stylesheet" />
     <script src="~/JavascriptFile/bootstrap.min.js"></script>
     @* ----------------------------------------------- *@
-
-
+    <script src="~/assets/PageScript/CommonScript/mainfunction.js"></script>
+    <script src="~/assets/PageScript/CommonScript/SSRL.MAIN.js"></script>
+    <script src="~/assets/PageScript/CommonScript/SSRL.STYLE.js"></script>
     <!-- Main style sheet -->
     <link href="~/CSS/style.css" rel="stylesheet">
 
@@ -50,6 +51,67 @@
             color: #333333;
             font-size: 12px;
         }
+
+        .center {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: none /*#ccc*/;
+            border-radius: 3px;
+            opacity: 1;
+            display: none;
+        }
+
+        .center-div {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: none /*#ccc*/;
+            border-radius: 3px;
+            opacity: 1;
+            display: none;
+        }
+
+        /*.container {
+            width: 1024px;
+            padding: 2em;
+        }*/
+
+        .bold-blue {
+            font-weight: bold;
+            color: #0277BD;
+        }
+
+        .background {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            display: block;
+            z-index: 900;
+        }
+
+        /*.content {
+            width: 200px;
+            height: 600px;
+            background-color: white;
+            position: absolute;
+            top: 60%;
+            left: 45%;
+            margin-left: -120px; 
+            margin-top: -300px; 
+        }*/
     </style>
 </head>
 
@@ -77,22 +139,29 @@
                     <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
                         <li><a href="http://rmsweb.devscraft.com/">HOME</a></li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">SETTINGS <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" >SETTINGS <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/Settings/UserInformation">USER INFORMATON</a></li>
                                 <li><a href="/Settings/MenuPermission">PERMISSION</a></li>
                                 <li><a href="/Settings/MenuCategory">MENU CATEGORY</a></li>
-                                <li><a href="blog-single.html">BLOG DETAILS</a></li>
-                                <li><a href="404.html">404 PAGE</a></li>
+                                <li><a href="/Settings/MenuSubCategory">MENU SUB CATEGORY</a></li>                                
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">MENU <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown">MENU <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/FoodMenu/FoodMenuA">CREATE MENU</a></li>
                                 <li><a href="/FoodMenu/ViewMenuList">VIEW MENU</a></li>
                                 <li><a href="blog-single.html">MENU LIST</a></li>
                                 <li><a href="404.html">404 PAGE</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Wealcome! @System.Web.HttpContext.Current.Session["UserName"].ToString() <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="/Account/LogOut">Log-Out</a></li>
+                                
                             </ul>
                         </li>
                         
@@ -116,7 +185,7 @@
             </div>
         </nav>
     </header>
-    <div>
+    <div id="contenbody">
         @RenderBody()        
     </div>    
          
@@ -125,7 +194,7 @@
    
     <!-- End Map section -->
     <!-- Start Footer -->
-    <footer id="mu-footer">
+    @*<footer id="mu-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -144,7 +213,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>*@
     <!-- End Footer -->
     <!-- jQuery library -->
     @*<script src="~/assets/js/jquery.min.js"></script>*@
@@ -160,7 +229,16 @@
 
     <!-- Custom js -->
     <script src="~/assets/js/custom.js"></script> 
+
+    <div id="fade" style="height: 768px;z-index:900;opacity:5; display:none" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"></div>
+    <div id="modal" class="center-div"><img id="loader" src="~/image/ajax-loader1.gif" /><br>Please wait..</div>
 </body>
 </html>
 
 
+<script type="text/javascript">
+    $(function () {
+        //$(window).height()
+        $('#contenbody').css('height', $(window).height() - 138);
+    });
+</script>

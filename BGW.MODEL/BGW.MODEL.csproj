@@ -61,7 +61,9 @@
     <Compile Include="Settings\IMSSettingsModel\QualityModel.cs" />
     <Compile Include="Settings\IMSSettingsModel\ShiftInformationModel.cs" />
     <Compile Include="Settings\IMSSettingsModel\StationModel.cs" />
+    <Compile Include="Settings\UserSettingsModel\MenuCategoryModel.cs" />
     <Compile Include="Settings\UserSettingsModel\MenuPermissionModel.cs" />
+    <Compile Include="Settings\UserSettingsModel\MenuSubCategoryModel.cs" />
     <Compile Include="Settings\UserSettingsModel\UserInformationModel.cs" />
   </ItemGroup>
   <ItemGroup>

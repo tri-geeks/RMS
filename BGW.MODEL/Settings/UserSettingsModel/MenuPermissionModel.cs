@@ -60,19 +60,20 @@ namespace BGW.MODEL.Settings.UserSettingsModel
             if (this.SetAdded)
             {
                 arr = new object[] { _PermissionID, _UserID, _MenuID, _Authorization };
-                this.SpName = "[dbo].[spSavetblUserWiseMenu]";
+                this.SpName = "[Security].[spSaveUserWiseMenu]";
             }
             else if (this.SetUpdated)
             {
                 arr = new object[] { _PermissionID, _UserID, _MenuID, _Authorization };
-                this.SpName = "[dbo].[spUpdatetblUserWiseMenu]";
+                this.SpName = "[Security].[spUpdateUserWiseMenu]";
             }
             else if (this.SetDeleted)
             {
                 arr = new object[] { _PermissionID };
-                this.SpName = "[dbo].[spUpdatetblUserWiseMenu]";
+                this.SpName = "[Security].[spUpdateUserWiseMenu]";
             }
             return arr;
+
         }
 
 
@@ -98,7 +99,6 @@ namespace BGW.MODEL.Settings.UserSettingsModel
                 _UserID = reader.GetInt64("UserID"),
                 _MenuID = reader.GetInt32("MenuID"),
                 _Authorization = reader.GetInt32("Authorization")
-               
             };
         }
     }

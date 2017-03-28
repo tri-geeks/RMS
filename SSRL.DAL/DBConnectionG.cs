@@ -13,7 +13,7 @@ namespace SSRL.DAL
     class DBConnectionG : IDbConnection
     {
 
-        protected OdbcConnection odcConnection;
+        protected OdbcConnection odcConnection=null;
         
         public IDbTransaction BeginTransaction(IsolationLevel il)
         {

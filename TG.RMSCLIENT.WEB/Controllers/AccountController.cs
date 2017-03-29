@@ -57,5 +57,11 @@ namespace TG.RMSCLIENT.WEB.Controllers
             return RedirectToAction("Index", "Account");
         }
 
+        public ActionResult About()
+        {
+            return View();
+        }
+
+
     }
 }

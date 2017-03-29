@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BGW.MANAGER.Settings;
+using BGW.MODEL.Settings;
 using BGW.MODEL.Settings.UserSettingsModel;
 using TG.RMSCLIENT.WEB.Security;
 
@@ -185,6 +186,48 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw new Exception(ex.Message);
             }
         }
+        #endregion
+
+        #region Reservation Type
+        public ActionResult ReservationType()
+        {
+            return View();
+        }
+
+        [HttpPost]
+
+        public JsonResult ReservationTypeC(List<ReservationTypeModel> rtypelist)
+        {
+            try
+            {
+                foreach(ReservationTypeModel ritem in rtypelist)
+                {
+                    if (ritem.ReservationTypeID == 0)
+                        ritem.Added();
+                    else
+                        ritem.Updated();
+                }
+                _settingManager.SaveReservationType(rtypelist);
+                return Json(0);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public JsonResult GetReservationTypeList()
+        {
+            try
+            {
+                return Json(_settingManager.GetReservationTypeList(), JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        
         #endregion
 
     }

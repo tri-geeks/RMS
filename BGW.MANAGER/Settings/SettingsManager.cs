@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BGW.MODEL.Settings;
 using BGW.MODEL.Settings.UserSettingsModel;
 using SSRL.DAL;
 
@@ -16,7 +17,9 @@ namespace BGW.MANAGER.Settings
         MenuPermissionModel _menuModel = new MenuPermissionModel();
         MenuCategoryModel _menuCategory = new MenuCategoryModel();
         MenuSubCategoryModel _menuSubCategory = new MenuSubCategoryModel();
+        ReservationTypeModel _reservationTypeModel = new ReservationTypeModel();
         #endregion
+
         #region User Information
         public void SaveUser(List<UserInformationModel> userList)
         {
@@ -189,6 +192,37 @@ namespace BGW.MANAGER.Settings
                 return _conManager.GetDefaultCollection(_menuSubCategory, @"SELECT * FROM [Settings].[MenuSubCategory]");
             }
             catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
+        #region Reservation Type
+        public void SaveReservationType(List<ReservationTypeModel> rtypelist)
+        {
+            try
+            {
+                foreach(ReservationTypeModel rtypeitem in rtypelist)
+                {
+                    if (rtypeitem.ReservationTypeID == 0)
+                        rtypeitem.ReservationTypeID = _conManager.PrimaryKey("ReservationType");
+                }
+                _conManager.SaveCollection(rtypelist);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<ReservationTypeModel> GetReservationTypeList()
+        {
+            try
+            {
+                return _conManager.GetDefaultCollection(_reservationTypeModel, @"SELECT * FROM [Reservation].[ReservationType]");
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

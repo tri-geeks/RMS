@@ -382,6 +382,7 @@
     <Content Include="JavascriptFile\js\jquery.jqGrid.min.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuCategory.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuPermission.js" />
+    <Content Include="JavascriptFile\PageScript\Settings\ReservationType.js" />
     <Content Include="JavascriptFile\PageScript\Settings\SubCategory.js" />
     <Content Include="JavascriptFile\PageScript\Settings\UserInformation.js" />
     <Content Include="JavascriptFile\PageScript\ViewMenulist.js" />
@@ -577,15 +578,13 @@
     <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\videos\render-final_1.html.tmp" />
-    <Content Include="assets\videos\render-img.html.tmp" />
-    <Content Include="assets\videos\render-img.mp4.tmp" />
     <None Include="Properties\PublishProfiles\TRMSCLIENT.pubxml" />
     <Content Include="Views\FoodMenu\ViewMenuList.cshtml" />
     <Content Include="Views\Settings\UserInformation.cshtml" />
     <Content Include="Views\Settings\MenuPermission.cshtml" />
     <Content Include="Views\Settings\MenuCategory.cshtml" />
     <Content Include="Views\Settings\MenuSubCategory.cshtml" />
+    <Content Include="Views\Settings\ReservationType.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

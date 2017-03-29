@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "ReservationType";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+<script src="~/JavascriptFile/PageScript/Settings/ReservationType.js"></script>
+<script src="~/JavascriptFile/Common/JQCommon.js"></script>
+<style type="text/css">
+    #mu-reservation {
+        background-color: #fff;
+        display: inline;
+        float: left;
+        padding: 100px 0;
+        width: 100%;
+    }
+
+        #mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form button[type="submit"], button[type="button"] {
+            border: none;
+            margin-top: 20px;
+            /*margin-left: 15px;*/
+        }
+
+        #mu-reservation .mu-reservation-area .mu-reservation-content {
+            display: inline;
+            float: left;
+            margin-top: 0px;
+            /*padding: 0 100px;*/
+            width: 100%;
+        }
+
+            #mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form {
+                margin-top: -40px;
+                text-align: center;
+                margin-top: 25px;
+            }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+        /*padding-bottom: 25px;*/
+    }
+
+    .ui-jqgrid {
+        position: relative;
+        /*border: 1px solid #c1a35f;*/
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 0px;
+    }
+
+    /*.table-bordered > thead > tr > th,
+    .table-bordered > tbody > tr > th,
+    .table-bordered > tfoot > tr > th,
+    .table-bordered > thead > tr > td,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tfoot > tr > td {
+        border: 1px solid #c1a35f;
+    }*/
+</style>
+
+<section id="mu-reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-reservation-area">
+                    <div class="mu-title">
+                        <span class="mu-subtitle">Make a</span>
+                        <h2 style="color:black">Reservation Type</h2>
+                        <i class="fa fa-spoon"></i>
+                        <span class="mu-title-bar"></span>
+                    </div>
+                    <div class="mu-reservation-content">
+                        <form class="mu-reservation-form">
+
+                            <div class="row" style="padding-left:0%">
+
+                                @*<div class="col-md-12">
+                                        <button type="button" class="mu-readmore-btn">Search</button><button type="submit" class="mu-readmore-btn">Make Menu</button>
+                                    </div>*@
+                                <table id="JQReservationTypeList"></table>
+                                <div id="JQReservationTypepager"></div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="mu-readmore-btn">Make Reservation Type</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

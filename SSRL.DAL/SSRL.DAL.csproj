@@ -34,7 +34,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc">
-      <HintPath>I:\TRI-GEEKS\arup\New folder\TG.RMS.WEB\TG.RMS.WEB\TG.RMS.WEB\bin\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />

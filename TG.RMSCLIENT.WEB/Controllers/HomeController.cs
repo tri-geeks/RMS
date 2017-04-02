@@ -15,6 +15,5 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             return View();
         }
-
     }
 }

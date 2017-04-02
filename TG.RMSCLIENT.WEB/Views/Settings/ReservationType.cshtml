@@ -1,8 +1,8 @@
 ﻿@{
-    ViewBag.Title = "MenuCategory";
+    ViewBag.Title = "ReservationType";
     Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
 }
-<script src="~/JavascriptFile/PageScript/Settings/MenuCategory.js"></script>
+<script src="~/JavascriptFile/PageScript/Settings/ReservationType.js"></script>
 <script src="~/JavascriptFile/Common/JQCommon.js"></script>
 <style type="text/css">
     #mu-reservation {
@@ -30,7 +30,7 @@
             #mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form {
                 margin-top: -40px;
                 text-align: center;
-                margin-top:25px;
+                margin-top: 25px;
             }
 
     .row {
@@ -64,25 +64,25 @@
                 <div class="mu-reservation-area">
                     <div class="mu-title">
                         <span class="mu-subtitle">Make a</span>
-                        <h2 style="color:black">Menu Category</h2>
+                        <h2 style="color:black">Reservation Type</h2>
                         <i class="fa fa-spoon"></i>
                         <span class="mu-title-bar"></span>
                     </div>
                     <div class="mu-reservation-content">
                         <form class="mu-reservation-form">
-                            
+
                             <div class="row" style="padding-left:0%">
 
                                 @*<div class="col-md-12">
                                         <button type="button" class="mu-readmore-btn">Search</button><button type="submit" class="mu-readmore-btn">Make Menu</button>
                                     </div>*@
-                                <table id="JQMenuCategoryList"></table>
-                                <div id="JQMenuCategorypager"></div>
+                                <table id="JQReservationTypeList"></table>
+                                <div id="JQReservationTypepager"></div>
 
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="mu-readmore-btn">Make Category</button>
+                                    <button type="submit" class="mu-readmore-btn">Make Reservation Type</button>
                                 </div>
                             </div>
                         </form>
@@ -92,4 +92,3 @@
         </div>
     </div>
 </section>
-

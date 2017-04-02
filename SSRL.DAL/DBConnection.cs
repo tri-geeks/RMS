@@ -40,11 +40,11 @@ namespace SSRL.DAL
             }
             //else if (connections[1].ProviderName == "System.Data.Odbc")
             //{
-            //    connection = new OdbcConnection(ConnectionString());                
+            //    connection = new OdbcConnection(ConnectionString());
             //}
             connection.Open();
         }
-        private void CloseConnection()
+        internal void CloseConnection()
         {
             if (connections[1].ProviderName == "System.Data.SqlClient")
                 connection.Close();

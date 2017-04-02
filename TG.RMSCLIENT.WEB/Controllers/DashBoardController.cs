@@ -13,7 +13,10 @@ namespace TG.RMSCLIENT.WEB.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            if (System.Web.HttpContext.Current.Session["UserID"] == null)
+                return RedirectToAction("Index", "Account");
+            else
+                return View();
         }
 
     }

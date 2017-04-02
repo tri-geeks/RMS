@@ -1,4 +1,6 @@
 ﻿var JQMenuCategoryList;
+var obj = new Suraya();
+var msg = new UIStyle();
 $(function () {
     GridName = 'JQMenuCategoryList';
     Gridfooter = 'JQMenuCategorypager';
@@ -6,20 +8,32 @@ $(function () {
     ViewControl(true, true, true, false, false, false)
     JQMenuCategoryList = $('#JQMenuCategoryList');
     MenuList(JQMenuCategoryList);
+
+
+    //****************Submit*********************
+    $('form').submit(function () {
+        var formdata = new FormData(this);
+        var categoryList = $('#JQMenuCategoryList').getRowData();
+        //formdata.append('UserID', $('#UserID').val());
+        obj.addListWithForm(formdata, categoryList, 'categoryList');
+        obj.Save({
+            url: rootPath + '/Settings/MenuCategoryC',
+            form: formdata
+        });
+        JQMenuCategoryList.trigger("reloadGrid");
+    });
 });
 
 function MenuList(JQMenuCategoryList) {
     JQMenuCategoryList.jqGrid({
-        url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
+        url: rootPath+'/Settings/GetMenuCategoryList',
         mtype: "GET",
         styleUI: 'Bootstrap',
-        datatype: "jsonp",
+        datatype: "json",
         colModel: [
-            { label: 'OrderID', name: 'OrderID', key: true, width: 75, hidden: true },
-            { label: 'Customer ID', name: 'CustomerID', width: 150 },
-            { label: 'Order Date', name: 'OrderDate', width: 150, editable: true },
-            { label: 'Freight', name: 'Freight', width: 150, editable: true },
-            { label: 'Ship Name', name: 'ShipName', width: 150, editable: true },
+            { label: 'MCID', name: 'MCID', key: true, width: 75, hidden: true },
+            { label: 'Category Name', name: 'CategoryName', width: 400, editable: true },
+            { label: 'Details', name: 'Details', width: 500, editable: true },            
             {
                 label: 'Commit|Cancel',
                 name: 'LinkButton',

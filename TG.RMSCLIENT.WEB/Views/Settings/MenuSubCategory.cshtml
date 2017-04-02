@@ -1,8 +1,10 @@
 ﻿@{
-    ViewBag.Title = "MenuCategory";
+    ViewBag.Title = "MenuSubCategory";
     Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
 }
-<script src="~/JavascriptFile/PageScript/Settings/MenuCategory.js"></script>
+
+
+<script src="~/JavascriptFile/PageScript/Settings/SubCategory.js"></script>
 <script src="~/JavascriptFile/Common/JQCommon.js"></script>
 <style type="text/css">
     #mu-reservation {
@@ -23,14 +25,14 @@
             display: inline;
             float: left;
             margin-top: 0px;
-            /*padding: 0 100px;*/
+            padding: 0 50px;
             width: 100%;
         }
 
             #mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form {
                 margin-top: -40px;
                 text-align: center;
-                margin-top:25px;
+                margin-top: 25px;
             }
 
     .row {
@@ -46,6 +48,7 @@
         -moz-border-radius: 3px;
         border-radius: 0px;
     }
+    
 
     /*.table-bordered > thead > tr > th,
     .table-bordered > tbody > tr > th,
@@ -64,20 +67,20 @@
                 <div class="mu-reservation-area">
                     <div class="mu-title">
                         <span class="mu-subtitle">Make a</span>
-                        <h2 style="color:black">Menu Category</h2>
+                        <h2 style="color:black">Menu Sub Category</h2>
                         <i class="fa fa-spoon"></i>
                         <span class="mu-title-bar"></span>
                     </div>
                     <div class="mu-reservation-content">
                         <form class="mu-reservation-form">
-                            
+
                             <div class="row" style="padding-left:0%">
 
                                 @*<div class="col-md-12">
                                         <button type="button" class="mu-readmore-btn">Search</button><button type="submit" class="mu-readmore-btn">Make Menu</button>
                                     </div>*@
-                                <table id="JQMenuCategoryList"></table>
-                                <div id="JQMenuCategorypager"></div>
+                                <table id="JQMenuSubCategoryList"></table>
+                                <div id="JQMenuSubCategorypager"></div>
 
                             </div>
                             <div class="row">
@@ -92,4 +95,3 @@
         </div>
     </div>
 </section>
-

@@ -63,6 +63,14 @@
         -moz-border-radius: 0px;
         border-radius: 0px;
     }
+    /*.table-bordered > thead > tr > th,
+    .table-bordered > tbody > tr > th,
+    .table-bordered > tfoot > tr > th,
+    .table-bordered > thead > tr > td,
+    .table-bordered > tbody > tr > td,
+    .table-bordered > tfoot > tr > td {
+        border: 1px solid #c1a35f;
+    }*/
 </style>
 
 <section id="mu-reservation">
@@ -72,13 +80,82 @@
                 <div class="mu-reservation-area">
                     <div class="mu-title">
                         <span class="mu-subtitle">Make A</span>
-                        <h2 style="color:black">User</h2>
+                        <h3 style="color:black">User</h3>
                         <i class="fa fa-spoon"></i>
                         <span class="mu-title-bar"></span>
                     </div>
                     <div class="mu-reservation-content">
+                        @using (Html.BeginForm(new { @class = "mu-reservation-form" }))
+                        {
+                            <div class="mu-reservation-form">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="User Id" name="UserID" id="UserID" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="User Full Name" name="UserFullName" id="UserFullName" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Email" name="Email" id="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Contact" name="Contact" id="Contact" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="User Name" name="UserName" id="UserName" required>
+                                            </div>
+                                        </div>
 
-                        <form class="mu-reservation-form">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Password" name="Password" id="Password" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Confirm Password" name="ConfirmPassword" id="ConfirmPassword" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-6 form-group">
+                                                @*<input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>*@
+                                                @Html.CheckBox("IsAdmin",new { @id= "IsAdmin" })<span style="color: #444"> Admin</span>
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                @Html.CheckBox("IsActive",new { @id= "IsActive" })<span style="color: #444"> Active</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <table id="JQUserList"></table>
+                                            <div id="JQUserPager"></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button type="button" class="mu-readmore-btn" onclick="fNew()">New</button><button type="submit" class="mu-readmore-btn">Make User</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                        
+                        @*<form class="mu-reservation-form" method="post" action="UserInformationC">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="col-md-12">
@@ -113,11 +190,16 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Confirm Password" name="ConfirmPassword">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
                                         <div class="col-md-6 form-group">
-                                            <input type="checkbox" class="" name="IsAdmin"> <span style="color: #444"> Admin</span>
+                                            <input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input type="checkbox" class="" name="IsUser"> <span style="color: #444"> User</span>
+                                            <input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>
                                         </div>
 
                                     </div>                                    
@@ -136,7 +218,7 @@
                                 </div>
 
                             </div>
-                        </form>
+                        </form>*@
                     </div>
                 </div>
             </div>

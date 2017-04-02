@@ -57,6 +57,7 @@
     <Compile Include="Settings\IMSSettingsManager\QualityManager.cs" />
     <Compile Include="Settings\IMSSettingsManager\ShiftInformationManager.cs" />
     <Compile Include="Settings\IMSSettingsManager\StationManager.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
     <Compile Include="Settings\UserSettingsManager\MenuPermissionManager.cs" />
     <Compile Include="Settings\UserSettingsManager\UserInformationManager.cs" />
     <Compile Include="Settings\Variable\VariableModel.cs" />

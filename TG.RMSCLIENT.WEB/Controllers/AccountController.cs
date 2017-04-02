@@ -8,17 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.MANAGER.Settings;
+using System.Web.SessionState;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
     public class AccountController : Controller
-    {
-
-        public static string User { get; set; }
-
-        public static string Url1 { get; set; }
-        public static string Url2 { get; set; }
-
+    {        
 
         public ActionResult Index()
         {           
@@ -31,19 +27,19 @@ namespace TG.RMSCLIENT.WEB.Controllers
             try
             {
                 //System.Web.HttpContext.Current.Session["UserName"] = "";
-                //UserInformationManager userManager = new UserInformationManager();
-                //UserInformationModel userModel = userManager.GetUser(model.UserName, model.Password);
-                //if (userModel != null)
-                //{
-                //    System.Web.HttpContext.Current.Session["UserName"] = userModel.UserName;
-                //    User = userModel.UserName;
-                //    return RedirectToAction("DashBoardView", "DashBoard");
-                //}
-                //else
-                //{
-                return RedirectToAction("Index", "DashBoard");
-                    //return RedirectToAction("Index", "Account");
-                //}
+                SettingsManager userManager = new SettingsManager();
+               UserInformationModel userModel = userManager.GetUser(model.UserName, model.Password);
+                if (userModel != null)
+                {
+                    System.Web.HttpContext.Current.Session["UserName"] = userModel.UserName;
+                    System.Web.HttpContext.Current.Session["UserID"] = userModel.UserID;
+                    return RedirectToAction("Index", "DashBoard");
+                }
+                else
+                {
+                    ///return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("Index", "Account");
+                }
 
             }
             catch (Exception ex)
@@ -56,8 +52,16 @@ namespace TG.RMSCLIENT.WEB.Controllers
         public ActionResult LogOut()
         {
             Session.Remove("UserName");
+            Session.Remove("UserID");
+            Session.Clear();
             return RedirectToAction("Index", "Account");
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
 
     }
 }

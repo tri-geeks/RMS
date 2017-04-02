@@ -9,6 +9,7 @@
     <i class="fa fa-angle-up"></i>
     <span>Top</span>
 </a>
+
 <!-- END SCROLL TOP BUTTON -->
 <!-- Start header section -->
 
@@ -736,25 +737,38 @@
                         <span class="mu-title-bar"></span>
                     </div>
                     <div class="mu-reservation-content">
+
+                        <script src="~/assets/js/jquery.min.js"></script>
+                        <script src="~/assets/PageScript/CommonScript/mainfunction.js"></script>
+                        <script src="~/assets/PageScript/CommonScript/SSRL.STYLE.js"></script>
+                        <script src="~/assets/PageScript/CommonScript/SSRL.MAIN.js"></script>
+                        
+                        <script src="~/JavascriptFile/PageScript/Booking.js"></script>
+
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quidem autem iusto, perspiciatis, amet, quaerat blanditiis ducimus eius recusandae nisi aut totam alias consectetur et.</p>
-                        <form class="mu-reservation-form">
+                        <form class="mu-reservation-form" id="formR">
                             <div class="row">
+                                <input type="hidden" name="BookingID" id="BookingID" />
+                                <input type="hidden" name="InvoiceID" id="InvoiceID" />
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Full Name">
+                                        <input type="text" class="form-control" name="BookingDate" id="datepicker" placeholder="Date">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        @*<input type="text" class="form-control" placeholder="Reservation Type" name="ReservationTypeID">*@
+                                        <select class="form-control" id="ReservationTypeID" name="ReservationTypeID">
+                                            <option value="0">--Select User--</option>
+                                            <option value="1">User-1</option>
+                                            <option value="2">User-2</option>
+                                            <option value="3">User-3</option>
+
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone Number">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
+                               
+                                @*<div class="col-md-6">
                                     <div class="form-group">
                                         <select class="form-control">
                                             <option value="0">How Many?</option>
@@ -770,22 +784,44 @@
                                             <option value="10 People">10 People</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div>*@
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="datepicker" placeholder="Date">
+                                        <input type="text" class="form-control" placeholder="StartTime" name="StartTime" id="StartTime" readonly="readonly">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone No">
+                                        <input type="text" class="form-control" placeholder="EndTime" name="EndTime" id="EndTime" readonly="readonly">
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Booking Qty" name="BookingQty">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Full Name" name="Name" id="Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email" name="Email" id="Email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Contact" name="Contact" id="Contact" required>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                        <textarea class="form-control" cols="30" rows="10" placeholder="Your Message" name="Remark" id="Remark"></textarea>
                                     </div>
                                 </div>
+
                                 <button type="submit" class="mu-readmore-btn">Make Reservation</button>
                             </div>
                         </form>

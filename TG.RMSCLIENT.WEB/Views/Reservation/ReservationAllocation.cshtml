@@ -1,8 +1,10 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ReservationAllocation";
     Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
 }
-<script src="~/JavascriptFile/PageScript/BashBoard.js"></script>
+
+<script src="~/JavascriptFile/PageScript/ReservationAllocation.js"></script>
+<script src="~/JavascriptFile/Common/JQCommon.js"></script>
 <style type="text/css">
     #mu-reservation {
         background-color: #fff;
@@ -22,7 +24,7 @@
             display: inline;
             float: left;
             margin-top: 0px;
-            /*padding: 0 100px;*/
+            padding: 0 50px;
             width: 100%;
         }
 
@@ -46,6 +48,7 @@
         border-radius: 0px;
     }
 
+
     /*.table-bordered > thead > tr > th,
     .table-bordered > tbody > tr > th,
     .table-bordered > tfoot > tr > th,
@@ -62,20 +65,34 @@
             <div class="col-md-12">
                 <div class="mu-reservation-area">
                     <div class="mu-title">
-                        <span class="mu-subtitle">View</span>
-                        <h2 style="color:black">Booking List</h2>
+                        <span class="mu-subtitle">Make a</span>
+                        <h2 style="color:black">Reservation Allocation</h2>
                         <i class="fa fa-spoon"></i>
                         <span class="mu-title-bar"></span>
                     </div>
                     <div class="mu-reservation-content">
                         <form class="mu-reservation-form">
+                            <div class="row" style="margin-left:-30px">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Allocation Date" name="AllocationDate" id="datepicker" readonly="readonly" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left:0%">
 
-                            <div class="row" style="padding-left:0%">                                
-                                <table id="JQBookingList"></table>
-                                <div id="JQBookingpager"></div>
+                                @*<div class="col-md-12">
+                                        <button type="button" class="mu-readmore-btn">Search</button><button type="submit" class="mu-readmore-btn">Make Menu</button>
+                                    </div>*@
+                                <table id="JQReservationAllocationList"></table>
+                                <div id="JQReservationAllocationpager"></div>
 
                             </div>
-                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="mu-readmore-btn">Make Category</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

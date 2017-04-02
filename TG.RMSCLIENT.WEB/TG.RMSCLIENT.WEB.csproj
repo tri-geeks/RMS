@@ -113,6 +113,7 @@
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\FoodMenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -380,6 +381,9 @@
     <Content Include="JavascriptFile\js\install.txt" />
     <Content Include="JavascriptFile\js\jquery-1.11.0.min.js" />
     <Content Include="JavascriptFile\js\jquery.jqGrid.min.js" />
+    <Content Include="JavascriptFile\PageScript\BashBoard.js" />
+    <Content Include="JavascriptFile\PageScript\Booking.js" />
+    <Content Include="JavascriptFile\PageScript\ReservationAllocation.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuCategory.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuPermission.js" />
     <Content Include="JavascriptFile\PageScript\Settings\ReservationType.js" />
@@ -585,6 +589,7 @@
     <Content Include="Views\Settings\MenuCategory.cshtml" />
     <Content Include="Views\Settings\MenuSubCategory.cshtml" />
     <Content Include="Views\Settings\ReservationType.cshtml" />
+    <Content Include="Views\Reservation\ReservationAllocation.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

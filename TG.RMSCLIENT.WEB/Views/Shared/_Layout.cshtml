@@ -20,6 +20,15 @@
     <!-- Theme color -->
     <link id="switcher" href="~/assets/css/theme-color/default-theme.css" rel="stylesheet">
 
+    <link href="~/assets/CustomCSS/CSS1.css" rel="stylesheet" />
+    <script src="~/assets/js/jquery.min.js"></script>
+
+    <script src="~/assets/PageScript/CommonScript/mainfunction.js"></script>
+    <script src="~/assets/PageScript/CommonScript/SSRL.MAIN.js"></script>
+    <script src="~/assets/PageScript/CommonScript/SSRL.STYLE.js"></script>
+
+
+
     <!-- Main style sheet -->
     <link href="~/CSS/style.css" rel="stylesheet">
     
@@ -97,7 +106,9 @@
     <div>
         @RenderBody()        
     </div>    
-         
+     
+    <div id="fade" style="height: 768px;z-index:900;opacity:5; display:none" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"></div>
+    <div id="modal" class="center-div"><img id="loader" src="~/image/ajax-loader1.gif" /><br>Please wait..</div>
     
     <!-- Start Map section -->
    

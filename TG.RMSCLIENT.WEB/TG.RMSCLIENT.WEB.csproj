@@ -585,6 +585,7 @@
     <Content Include="Views\Settings\MenuCategory.cshtml" />
     <Content Include="Views\Settings\MenuSubCategory.cshtml" />
     <Content Include="Views\Settings\ReservationType.cshtml" />
+    <Content Include="Views\Shared\_RateNow.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

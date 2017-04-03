@@ -54,6 +54,8 @@
     <Compile Include="Report\ReportMenuModel.cs" />
     <Compile Include="Report\ReportModuleModel.cs" />
     <Compile Include="Report\ReportParameterModel.cs" />
+    <Compile Include="Reservation\BookingModel.cs" />
+    <Compile Include="Reservation\ReservationAllocationModel.cs" />
     <Compile Include="Settings\EnergyConsumtionModel\EnergySourceModel.cs" />
     <Compile Include="Settings\EnergyConsumtionModel\EnergyUnitModel.cs" />
     <Compile Include="Settings\IMSSettingsModel\FurnaceModel.cs" />

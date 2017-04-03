@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.MANAGER.ReservationManager;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -17,6 +18,19 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 return RedirectToAction("Index", "Account");
             else
                 return View();
+        }
+
+        public JsonResult GetBookingList()
+        {
+            try
+            {
+                ReservationManager _objmanager = new ReservationManager();
+                return Json(_objmanager.GetBookingList(), JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
     }

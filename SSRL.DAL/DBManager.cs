@@ -43,7 +43,7 @@ namespace SSRL.DAL
         {
             try
             {
-                //_con.BeginTransection();
+                _con.OpenConnection();
                 IDataReader reader = null;
                 reader = _con.ExecuteReader(sqlquery, reader);
                 var Parameters = new object[] { reader };
@@ -53,8 +53,7 @@ namespace SSRL.DAL
                     MethodInfo methodInfo = classobject.GetType().GetMethod(classmethod);
                     var obj = methodInfo.Invoke(classobject, Parameters);
                     list.Add(obj);
-                }
-                //_con.CommitTransection();
+                }                
                 _con.CloseConnection();
                 return list.Cast<T>().ToList();
             }
@@ -75,7 +74,7 @@ namespace SSRL.DAL
         {
             try
             {
-                //_con.BeginTransection();
+                _con.OpenConnection();
                 IDataReader reader = null;
                 reader = _con.ExecuteReader(sqlquery, reader);
                 var Parameters = new object[] { reader };
@@ -85,15 +84,13 @@ namespace SSRL.DAL
                     MethodInfo methodInfo = classobject.GetType().GetMethod(classmethod);
                     var obj = methodInfo.Invoke(classobject, Parameters);
                     list.Add(obj);
-                }
-                //_con.CommitTransection();
+                }                
                 _con.CloseConnection();
                 return list.Cast<T>().ToList();
             }
             catch (Exception ex)
             {
-                _con.RollBack();
-                //_con.CloseConnection();
+                _con.CloseConnection();
                 throw new Exception(ex.Message);
                 
             }            
@@ -106,7 +103,7 @@ namespace SSRL.DAL
         {
             try
             {
-                //_con.BeginTransection();
+                _con.OpenConnection();
                 IDataReader reader = null;
                 reader = _con.ExecuteReader(sqlquery, reader);
                 var Parameters = new object[] { reader };
@@ -116,13 +113,13 @@ namespace SSRL.DAL
                     MethodInfo methodInfo = classobject.GetType().GetMethod(classmethod);
                     obj = methodInfo.Invoke(classobject, Parameters);                   
                 }
-                //_con.CommitTransection();
+               
                 _con.CloseConnection();
                 return (T)obj;
             }
             catch (Exception ex)
             {
-                _con.RollBack();
+                _con.CloseConnection();
                 throw new Exception(ex.Message);
 
             }
@@ -202,7 +199,7 @@ namespace SSRL.DAL
         {
             try
             {
-                _con.BeginTransection();
+                _con.OpenConnection();
                 IDataReader reader = null;
                 reader = _con.ExecuteReader(sql, reader);
                 var selectListItem = new List<SelectListItem> { new SelectListItem { Value = "0", Text = initialtext.ToString() } };
@@ -218,10 +215,12 @@ namespace SSRL.DAL
                         
                     });
                 }
+                _con.CloseConnection();
                 return selectListItem;
             }
             catch(Exception ex)
             {
+                _con.CloseConnection();
                 throw new Exception(ex.Message);
             }
         }

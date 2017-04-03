@@ -13,43 +13,59 @@ namespace SSRL.DAL
     class DBConnection
     {
         protected IDbTransaction transaction;
-        protected OdbcTransaction odbctransaction;
+       // protected OdbcTransaction odbctransaction;
 
         protected SqlConnection connection;
         //protected OdbcConnection odcConnection;
 
         //protected IDbConnection connection;
         IDataReader reader;
-        OdbcDataReader odbcreader;
+        //OdbcDataReader odbcreader;
         IDataAdapter da;
 
         protected ConnectionStringSettingsCollection connections = ConfigurationManager.ConnectionStrings;
         
-        string connectionStr;
+        //string connectionStr;
         private string ConnectionString()
         {  
             string sqlconnection = ConfigurationManager.ConnectionStrings["Arup"].ToString();
             return sqlconnection;
         }
 
-        private void OpenConnection()
+        internal void OpenConnection()
         {
-            if (connections[1].ProviderName == "System.Data.SqlClient")
+            try
             {
-                connection = new SqlConnection(ConnectionString());                
+                if (connections[1].ProviderName == "System.Data.SqlClient")
+                {
+                    connection = new SqlConnection(ConnectionString());
+                }
+                //else if (connections[1].ProviderName == "System.Data.Odbc")
+                //{
+                //    connection = new OdbcConnection(ConnectionString());
+                //}
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
             }
-            //else if (connections[1].ProviderName == "System.Data.Odbc")
-            //{
-            //    connection = new OdbcConnection(ConnectionString());
-            //}
-            connection.Open();
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         internal void CloseConnection()
         {
             if (connections[1].ProviderName == "System.Data.SqlClient")
-                connection.Close();
+            {
+                if(connection.State== ConnectionState.Open)
+                    connection.Close();
+            }
+                
             else if (connections[1].ProviderName == "System.Data.Odbc")
-                connection.Close();
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
         }        
         protected internal void BeginTransection()
         {
@@ -97,7 +113,7 @@ namespace SSRL.DAL
         {
             try
             {
-                OpenConnection();
+                //OpenConnection();
                 IDbCommand command = connection.CreateCommand();
                 command.CommandText = sql;
                 reader = command.ExecuteReader();

@@ -13,6 +13,7 @@
     <link href="~/assets/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
     <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+   
     
     <!-- Slick slider -->
     <link rel="stylesheet" type="text/css" href="~/assets/css/slick.css">
@@ -22,19 +23,15 @@
     <!-- Theme color -->
     <link id="switcher" href="~/assets/css/theme-color/default-theme.css" rel="stylesheet">
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
-    
+
     @* ------------------Script library---------------- *@
     @*<script src="~/Scripts/js/jquery-1.11.0.min.js"></script>*@
     <script src="~/assets/js/jquery.min.js"></script>
     <script src="~/JavascriptFile/js/i18n/grid.locale-en.js"></script>
     <script src="~/JavascriptFile/js/jquery.jqGrid.min.js"></script>
-    <link href="~/assets/css/bootstrap.css" rel="stylesheet" />
-   @* <link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
     <link href="~/JavascriptFile/css/ui.jqgrid-bootstrap.css" rel="stylesheet" />
-    <script src="~/assets/js/bootstrap.js"></script>
-   @* <script src="~/JavascriptFile/bootstrap.min.js"></script>*@
-    <script src="~/assets/ModalJS/run_prettify.js"></script>
-    <link href="~/assets/ModalCS/bootstrap-dialog.css" rel="stylesheet" />
+    <script src="~/JavascriptFile/bootstrap.min.js"></script>   
     <script src="~/assets/ModalJS/bootstrap-dialog.js"></script>
     @* ----------------------------------------------- *@
     <script src="~/assets/PageScript/CommonScript/mainfunction.js"></script>
@@ -144,7 +141,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-                        <li><a href="http://rmsweb.devscraft.com/">HOME</a></li>
+                        <li><a href="/DashBoard">DASH BOARD</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" >SETTINGS <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -197,7 +194,17 @@
     <div id="contenbody">
         @RenderBody()        
     </div>    
-         
+    <section>
+        <div class="alert alert-warning" id="warning" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
+            <strong>Warning!</strong> Password and Confirm Password must be same.
+        </div>
+        <div class="alert alert-success" id="success" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
+            <strong>Information!</strong> Saved successfully.
+        </div>
+        <div class="alert alert-danger" id="error" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
+            <strong>Danger!</strong> Error saving.
+        </div>
+    </section>   
     
     <!-- Start Map section -->
    

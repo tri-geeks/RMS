@@ -241,6 +241,32 @@ namespace BGW.MANAGER.Settings
                 throw new Exception(ex.Message);
             }
         }
+
+        public object VCboRservationType()
+        {
+            try
+            {
+                return _conManager.PopulateComboBox("SELECT * FROM [Reservation].[ReservationType]", "ReservationTypeID", "TypeName", "-Select Type-");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public object VCboRservationStatus()
+        {
+            try
+            {
+                return _conManager.PopulateComboBox("SELECT * FROM [Reservation].[BookingStatus]", "ReservationStatusID", "StatusName", "-Select Type-");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
         #endregion
     }
 }

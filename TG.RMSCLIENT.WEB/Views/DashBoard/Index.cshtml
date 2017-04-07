@@ -3,14 +3,15 @@
     Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
 }
 <script src="~/JavascriptFile/PageScript/BashBoard.js"></script>
+<script src="~/JavascriptFile/Common/JQCommon.js"></script>
 <style type="text/css">
-    #mu-reservation {
+        #mu-reservation {
         background-color: #fff;
         display: inline;
         float: left;
         padding: 100px 0;
         width: 100%;
-    }
+        }
 
         #mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form button[type="submit"], button[type="button"] {
             border: none;
@@ -32,19 +33,19 @@
                 margin-top: 25px;
             }
 
-    .row {
-        margin-right: -15px;
-        margin-left: -15px;
+        .row {
+        /*margin-right: -15px;*/
+        margin-left: -7%;
         /*padding-bottom: 25px;*/
-    }
+        }
 
-    .ui-jqgrid {
+        .ui-jqgrid {
         position: relative;
         /*border: 1px solid #c1a35f;*/
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 0px;
-    }
+        }
 
     /*.table-bordered > thead > tr > th,
     .table-bordered > tbody > tr > th,
@@ -69,11 +70,42 @@
                     </div>
                     <div class="mu-reservation-content">
                         <form class="mu-reservation-form">
-
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <select class="form-control" id="ReservationType" name="ReservationType">
+                                            <option value="0">--Select Category--</option>
+                                            <option value="1">Break Fast</option>
+                                            <option value="2">Launch</option>
+                                            <option value="3">Dinner</option>                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">                                        
+                                        <input type="text" class="form-control" placeholder="Booking Date" name="BookingDate" id="datepicker">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <select class="form-control" id="ReservationStatus" name="ReservationStatus">
+                                            <option value="0">--Select Status--</option>
+                                            <option value="1">Open</option>
+                                            <option value="2">Close</option>
+                                            <option value="3">Cancealed</option>
+                                        </select>
+                                    </div>                                    
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <button type="button" class="mu-readmore-btn" id="search">Search</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                             <div class="row" style="padding-left:0%">                                
                                 <table id="JQBookingList"></table>
                                 <div id="JQBookingpager"></div>
-
                             </div>
                             
                         </form>

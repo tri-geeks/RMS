@@ -17,7 +17,18 @@ $(function () {
         });
         JQUserList.trigger("reloadGrid");
 
-    })
+    });
+
+    //**************************************************
+
+    $('#ConfirmPassword').blur(function () {
+        if ($('#ConfirmPassword').val() != $('#Password').val()) {
+            msg.warning();
+            $("#ConfirmPassword").focus();
+            return;
+        }
+
+    });
 });
 
 function UserList(JQUserList) {
@@ -101,3 +112,4 @@ function clear() {
     $('#IsActive').prop("checked", false);
     $('#IsAdmin').prop("checked", false);
 };
+

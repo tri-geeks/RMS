@@ -1,52 +1,78 @@
-﻿using BGW.MANAGER.FoodChartMenuManager;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.MANAGER.ReservationManager;
+using BGW.MODEL.Reservation;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-        FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
+        ReservationManager _reservationManager = new ReservationManager();
         public ActionResult Index()
         {
             return View();
         }
-        public JsonResult SendRating(string r, string s, string id, string url)
+        [HttpPost]
+        public JsonResult SaveBooking(BookingModel bookingmodel)
         {
-            int autoId = 0;
-            int thisRating = 0;
-            int sectionId = 0;
-            int.TryParse(s, out sectionId);
-            int.TryParse(r, out thisRating);
-            int.TryParse(id, out autoId);
-            if (!User.Identity.IsAuthenticated)
+            try
             {
-                return Json("Not authenticated!");
+                if (bookingmodel.BookingID == 0)
+                {
+                    bookingmodel.Added();
+                    bookingmodel.BookingStatus = 1;
+                }
+                    
+                List<BookingModel> bookinglist = new List<BookingModel>();
+                bookinglist.Add(bookingmodel);
+                var id = _reservationManager.SaveBooking(bookinglist);
+                return Json(id);
             }
-            if (autoId.Equals(0))
+            catch(Exception ex)
             {
-                return Json("Record to vote doesn't exist");
-            }
-            switch (s)
-            {
-                case "5":
-                    var isIt = "";
-                    return Json(isIt);
-                    break;
-                default:
-                    return Json(null);
-                    break;
+                throw new Exception(ex.Message);
             }
         }
 
-        public JsonResult LoadTabItem()
+        public JsonResult CboReservationType()
         {
-            return Json(_FoodChartMenuManager.LoadTabItem(), JsonRequestBehavior.AllowGet);
+            try
+            {
+                return Json(_reservationManager.VCboReservationType(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
+
+        public JsonResult GetTime(Int64 reservationType)
+        {
+            try
+            {
+                return Json(_reservationManager.GetTimePeriod(reservationType),JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public JsonResult CheckAvailability(Int32 Qty,DateTime BookingDate,Int64 BookingType)
+        {
+            try
+            {
+                return Json(_reservationManager.CkeckAvailability(Qty, BookingDate, BookingType).Value,JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        
     }
 }

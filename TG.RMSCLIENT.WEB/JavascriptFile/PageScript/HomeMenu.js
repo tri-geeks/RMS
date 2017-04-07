@@ -6,11 +6,20 @@ $(function () {
 
 
 function LoadTabItem() {
-    obj.loaddropV({
-        url: rootPath + '/Home/LoadTabItem',
-        values: '',
-        select: $('#FoodMenuTabItem')
+    var res = obj.Getdata({
+        url: rootPath + '/ViewMenu/LoadFoodMenu',
+        values: ''
+        
     });
+    var li = '';
+   for (var i = 0; i < res.length; i++) {
+       li += '<li class="active"><a href="#' + res[i].MCID + '" data-toggle="tab">' + res[i].CategoryName + '</a></li>';
+   }
+   $('#ul').append(li);
+
+   //$('selector').on('click', function () {
+
+   //})
 }
 
 function LoadSixMenuItem() {

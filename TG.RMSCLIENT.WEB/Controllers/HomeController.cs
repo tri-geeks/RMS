@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BGW.MANAGER.FoodChartMenuManager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
     {
         //
         // GET: /Home/
-
+        FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
         public ActionResult Index()
         {
             return View();
@@ -34,10 +35,18 @@ namespace TG.RMSCLIENT.WEB.Controllers
             switch (s)
             {
                 case "5":
-                    var isIt = 
+                    var isIt = "";
+                    return Json(isIt);
+                    break;
                 default:
+                    return Json(null);
                     break;
             }
+        }
+
+        public JsonResult LoadTabItem()
+        {
+            return Json(_FoodChartMenuManager.LoadTabItem(), JsonRequestBehavior.AllowGet);
         }
     }
 }

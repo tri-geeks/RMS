@@ -383,6 +383,8 @@
     <Content Include="JavascriptFile\js\jquery.jqGrid.min.js" />
     <Content Include="JavascriptFile\PageScript\BashBoard.js" />
     <Content Include="JavascriptFile\PageScript\Booking.js" />
+    <Content Include="JavascriptFile\PageScript\FoodMenu.js" />
+    <Content Include="JavascriptFile\PageScript\HomeMenu.js" />
     <Content Include="JavascriptFile\PageScript\ReservationAllocation.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuCategory.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuPermission.js" />
@@ -463,7 +465,9 @@
     <Content Include="JavascriptFile\src\jquery.fmatter.js" />
     <Content Include="JavascriptFile\src\jquery.jqGrid.js" />
     <Content Include="JavascriptFile\src\jquery.sortable.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -474,6 +478,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="MenuIMG\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -532,7 +537,7 @@
     <Content Include="scss\style.scss" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Error.cshtml" />
@@ -590,6 +595,7 @@
     <Content Include="Views\Settings\MenuSubCategory.cshtml" />
     <Content Include="Views\Settings\ReservationType.cshtml" />
     <Content Include="Views\Reservation\ReservationAllocation.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

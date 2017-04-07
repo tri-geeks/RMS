@@ -182,12 +182,12 @@
                // $('td:nth-child(1)').hide();
                 //*********************Modal*****************************
 
-                var $textAndPic = $('<div style="overflow-y:scroll"></div>');
+                var $textAndPic = $('<div style="overflow-y:scroll; width:100%"></div>');
                 $textAndPic.append(table);
                 //**********************************************
                 for (var j = 0; j < object.ColumnVal.length; j++) {
                     if (object.ColumnVal[j].hidden == true)                        
-                        $('.table tr td:nth-child(1),tr th:nth-child(1)').hide();
+                        $('.table tr td:nth-child('+j+'),tr th:nth-child('+j+')').hide();
                 }
                 //****************************************************
 

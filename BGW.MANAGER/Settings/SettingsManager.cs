@@ -157,7 +157,7 @@ namespace BGW.MANAGER.Settings
         {
             try
             {
-                return _conManager.PopulateComboBox("SELECT * FROM Settings.MenuCategory", "MCID", "CategoryName", "-Select User-");
+                return _conManager.PopulateComboBox("SELECT * FROM Settings.MenuCategory", "MCID", "CategoryName", "-Select Category-");
             }
             catch (Exception ex)
             {
@@ -193,6 +193,20 @@ namespace BGW.MANAGER.Settings
             }
             catch(Exception ex)
             {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+        public object VCboMenuSubCategory(Int64 CategoryId)
+        {
+            try
+            {
+                return _conManager.PopulateComboBox(String.Format("SELECT * FROM Settings.MenuSubCategory Where CategoryID={0}", CategoryId), "SubCategoryID", "SubCategoryName", "-Select Sub Category-");
+            }
+            catch (Exception ex)
+            {
+
                 throw new Exception(ex.Message);
             }
         }

@@ -1,4 +1,5 @@
 ﻿using BGW.MODEL.Menu;
+using BGW.MODEL.Settings.UserSettingsModel;
 using SSRL.DAL;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace BGW.MANAGER.FoodChartMenuManager
         #region Object Initialization
         DBManager _conManager = new DBManager();
         FoodChartMenuModel _foodChartModel = new FoodChartMenuModel();
+        MenuCategoryModel _categoryModel = new MenuCategoryModel();
         #endregion
 
         #region Save FoodChartMenu
@@ -98,11 +100,11 @@ namespace BGW.MANAGER.FoodChartMenuManager
             }
         }
 
-        public FoodChartMenuModel LoadTabItem()
+        public List<MenuCategoryModel> LoadTabItem()
         {
             try
             {
-                return _conManager.SingleCollection(_foodChartModel, string.Format("SELECT * FROM [Settings].[MenuCategory] ORDER BY CategoryName"));
+                return _conManager.GetDefaultCollection(_categoryModel, string.Format("SELECT * FROM [Settings].[MenuCategory] ORDER BY CategoryName"));
             }
             catch (Exception ex)
             {

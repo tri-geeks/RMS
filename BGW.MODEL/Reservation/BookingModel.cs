@@ -100,6 +100,13 @@ namespace BGW.MODEL.Reservation
             set { _TypeName = value; }
         }
 
+        private Int32 _value;
+        public Int32 Value
+        {
+            get { return _value; }
+            set { _value = value; }
+        }
+
         public override object[] SetParameter()
         {
             object[] arr = { };
@@ -141,6 +148,14 @@ namespace BGW.MODEL.Reservation
                 _BookingStatus = reader.GetInt64("BookingStatus"),
                 _StatusName = reader.GetToString("StatusName"),
                 _TypeName = reader.GetToString("TypeName")
+            };
+        }
+
+        public object MapParameter_1(IDataReader reader)
+        {
+            return new BookingModel
+            {
+                _value = reader.GetInt32("Value")
             };
         }
     }

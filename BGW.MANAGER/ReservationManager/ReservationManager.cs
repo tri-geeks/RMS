@@ -100,13 +100,25 @@ namespace BGW.MANAGER.ReservationManager
             }
         }
 
-        public List<BookingModel> GetBookingList()
+        public List<BookingModel> GetBookingList(Int64 BookingType, string BookingDate, Int64 BookingStatus)
         {
             try
             {
-                return _conManager.GetDefaultCollection(_bookingModel, string.Format("[Reservation].[spGetBookingReservation]"));
+                return _conManager.GetDefaultCollection(_bookingModel, string.Format("[Reservation].[spGetBookingReservation] {0},'{1}',{2}",BookingType,BookingDate,BookingStatus));
             }
             catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public BookingModel CkeckAvailability(Int32 Qty, DateTime BookingDate, Int64 BookingType)
+        {
+            try
+            {
+                return _conManager.SingleCollection(_bookingModel, "MapParameter_1", string.Format("[Reservation].[spCheckAvailability] {0},'{1}',{2}",Qty,BookingDate,BookingType));
+            }
+            catch(Exception ex)
             {
                 throw new Exception(ex.Message);
             }

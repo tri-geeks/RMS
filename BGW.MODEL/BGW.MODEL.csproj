@@ -63,6 +63,7 @@
     <Compile Include="Settings\IMSSettingsModel\QualityModel.cs" />
     <Compile Include="Settings\IMSSettingsModel\ShiftInformationModel.cs" />
     <Compile Include="Settings\IMSSettingsModel\StationModel.cs" />
+    <Compile Include="Settings\ReservationStatusModel.cs" />
     <Compile Include="Settings\ReservationTypeModel.cs" />
     <Compile Include="Settings\UserSettingsModel\MenuCategoryModel.cs" />
     <Compile Include="Settings\UserSettingsModel\MenuPermissionModel.cs" />

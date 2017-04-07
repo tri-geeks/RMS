@@ -9,7 +9,22 @@ $(function () {
         GetTime(reservationType);
     })
 
+    $('#BookingQty').blur(function () {
+        var BookingDate = $('#datepicker').val();
+        var reservationType = $('#ReservationTypeID').val();
+        var BookingQty = $('#BookingQty').val();
+        var data = obj.Getdata({
+            url: rootPath + '/Home/CheckAvailability',
+            values: { 'Qty': BookingQty, 'BookingDate': BookingDate, 'BookingType': reservationType}
+        });
+        if (data == 0) {
+            alert('No available sit')
+            $('#BookingQty').focus();
+        }
+            //obj.TGModal("No availabe reservation")
 
+
+    });
 
     $('#formR').submit(function () {
         var formdata = new FormData(this); 
@@ -28,6 +43,8 @@ $(function () {
             async: false,
             success: function (data) {
                 msg.hideloading();
+                
+                window.location.href(rootPath + '/Home/Index');
                 window.open('https://www.youtube.com/results?search_query=tumi+andhar+dekho');
             },
             error: function () {
@@ -56,3 +73,7 @@ function GetTime(reservationType) {
     $('#StartTime').val(data.StartTime);
     $('#EndTime').val(data.EndTime);
 }
+
+
+
+

@@ -15,20 +15,20 @@
             async:false,
             success:function(data){
                 st.hideloading();
-                //setTimeout(function () {
-                //    if (data =='success')
-                //        st.success();
-                //    else
-                //        st.error();
-                //}, 1000);
+                setTimeout(function () {
+                    if (data =='success')
+                        st.success();
+                    else
+                        st.error();
+                }, 1000);
                 
             return false;
             },
             error: function () {
                 st.hideloading();
-                //setTimeout(function () {
-                //    st.error();
-                //}, 1000);
+                setTimeout(function () {
+                    st.error();
+                }, 1000);
             	
             	return false;
             }
@@ -90,7 +90,7 @@
     }    
    //**************** Load drop down ***********************
     this.loaddrop = function(url,object,select){
-        //st.loading(); 
+        st.loading(); 
         select.empty();
         $.ajax({
             url:url,
@@ -103,14 +103,14 @@
                 $.each(data,function(i,item){                   
                    select.append('<option value="'+data[i].key+'">'+data[i].val+'</option>');
                 });
-            //st.hideloading();     
+            st.hideloading();     
             }
         });
     }
 
     //**************--Load drop down for view bag--***********************
     this.loaddropV = function (object) {
-        //st.loading(); 
+        st.loading(); 
         object.select.empty();
         $.ajax({
             url: object.url,
@@ -122,7 +122,7 @@
                 $.each(data, function (i, item) {
                     object.select.append('<option value="' + data[i].Value + '">' + data[i].Text + '</option>');
                 });
-                //st.hideloading();     
+                st.hideloading();     
             }
         });
     }
@@ -182,7 +182,7 @@
                // $('td:nth-child(1)').hide();
                 //*********************Modal*****************************
 
-                var $textAndPic = $('<div style="overflow-y:scroll"></div>');
+                var $textAndPic = $('<div style="overflow-y:scroll; width:80%"></div>');
                 $textAndPic.append(table);
                 //**********************************************
                 for (var j = 0; j < object.ColumnVal.length; j++) {
@@ -337,6 +337,40 @@
              autoclose: true,
              todayHighlight: true
          })
+     }
+
+     this.CustomDialog = function (message) {
+
+         var $textAndPic = $('<div style="overflow-y:scroll;width:100%"></div>');
+         $textAndPic.append(message); 
+         BootstrapDialog.show({
+             title: 'Validation Message',
+             message: $textAndPic,
+             buttons: [{
+                 label: 'OK',
+                 action: function (dialogRef) {                     
+                     dialogRef.close();
+                 }
+             },
+             ]
+         });
+     }
+
+     this.TGModal = function (message) {
+         //$.dialog({
+         //    title: 'Text content!',
+         //    content: message,
+         //    buttons: {
+         //        aRandomButton: function () {
+         //            // this will be removed.
+         //        }
+         //    }
+         //});
+
+         $.alert({
+             title: 'Alert!',
+             content: 'Simple alert!',
+         });
      }
 }
 

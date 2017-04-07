@@ -15,7 +15,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public JsonResult SaveBooking(BookingModel bookingmodel)
         {
             try
@@ -61,6 +61,18 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
+        public JsonResult CheckAvailability(Int32 Qty,DateTime BookingDate,Int64 BookingType)
+        {
+            try
+            {
+                return Json(_reservationManager.CkeckAvailability(Qty, BookingDate, BookingType).Value,JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         
     }
 }

@@ -73,7 +73,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw;
             }
         }
-        #region Ratings
+        #region Ratings App
         /*
          * Create time 11.45 PM 4/9/17
          * Created By : Mithu

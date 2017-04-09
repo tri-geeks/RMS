@@ -12,10 +12,15 @@ function LoadTabItem() {
         
     });
     var li = '';
-   for (var i = 0; i < res.length; i++) {
-       li += '<li class="active"><a href="#' + res[i].MCID + '" data-toggle="tab">' + res[i].CategoryName + '</a></li>';
-   }
-   $('#ul').append(li);
+    for (var i = 0; i < res.length; i++) {
+        if (i == 0) {
+            li += '<li class="active"><a href="#' + res[i].CategoryName.toLowerCase() + '" data-toggle="tab">' + res[i].CategoryName + '</a></li>';
+        }
+        else {
+            li += '<li><a href="#' + res[i].CategoryName.toLowerCase() + '" data-toggle="tab">' + res[i].CategoryName + '</a></li>';
+        }
+    }
+    $('#ul').append(li);
 
    //$('selector').on('click', function () {
 

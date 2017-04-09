@@ -16,6 +16,7 @@ namespace BGW.MANAGER.ReservationManager
         ReservationAllocationModel _reservationAllocationModel = new ReservationAllocationModel();
         ReservationTypeModel _reservationTypeModel = new ReservationTypeModel();
         BookingModel _bookingModel = new BookingModel();
+        RatingModel _ratingModel = new RatingModel();
         #endregion
         #region Save Reservation Allocation
         public void SaveReservationAllocation(List<ReservationAllocationModel> allocationlist)
@@ -121,6 +122,39 @@ namespace BGW.MANAGER.ReservationManager
             catch(Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
+
+
+
+        #region Rating
+        /*
+         * Create time 11.45 PM 4/9/17
+         */
+        public void SaveRating(List<RatingModel> ratinglist)
+        {
+            try
+            {
+                _conManager.SaveCollection(ratinglist);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public RatingModel GetRatingByEmailId(string email)
+        {
+            try
+            {
+                return _conManager.SingleCollection(_ratingModel, string.Format("Select * from Ratings Where EmailId='{0}'", email));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
         #endregion

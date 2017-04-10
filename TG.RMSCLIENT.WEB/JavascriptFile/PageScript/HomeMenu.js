@@ -1,7 +1,12 @@
 ﻿var obj = new Suraya();
 $(function () {
     LoadTabItem();
-    LoadSixMenuItem();
+   // LoadSixMenuItem();
+    $('.a').click(function () {
+        var categoryName = $(this).attr('href').replace('#', '');
+        LoadSixMenuItem(categoryName);
+        
+    })
 });
 
 
@@ -14,10 +19,11 @@ function LoadTabItem() {
     var li = '';
     for (var i = 0; i < res.length; i++) {
         if (i == 0) {
-            li += '<li class="active"><a href="#' + res[i].CategoryName.toLowerCase() + '" data-toggle="tab">' + res[i].CategoryName + '</a></li>';
+            li += '<li class="active"><a href="#' + res[i].CategoryName.toLowerCase() + '" data-toggle="tab" class="a">' + res[i].CategoryName + '</a></li>';
+            LoadSixMenuItem(res[i].CategoryName.toLowerCase())
         }
         else {
-            li += '<li><a href="#' + res[i].CategoryName.toLowerCase() + '" data-toggle="tab">' + res[i].CategoryName + '</a></li>';
+            li += '<li><a href="#' + res[i].CategoryName.toLowerCase() + '" data-toggle="tab" class="a">' + res[i].CategoryName + '</a></li>';
         }
     }
     $('#ul').append(li);
@@ -27,10 +33,10 @@ function LoadTabItem() {
    //})
 }
 
-function LoadSixMenuItem() {
+function LoadSixMenuItem(categoryName) {
     res = obj.Getdata({
         url: rootPath + '/ViewMenu/LoadSixMenuItem',
-        values: '',
+        values: {'categoryName':categoryName},
     });
     var result='';
     var div = '';
@@ -43,10 +49,12 @@ function LoadSixMenuItem() {
     var enddiv = '';
     enddiv = '</ul>' +
                         '</div>' +
-                    '</div>' +
+                    '</div>' + 
                 '</div>' +
               '</div>' +
             '</div>';
+    var footerdiv = '';
+    footerdiv = '<a href="#' + res[0].CategoryName + '" data-toggle="tab" class="mu-readmore-btn"> Read More </a> ';
     var divRight = '';
     divRight = '<div class="col-md-6">  <div class="mu-tab-content-right"> <ul class="mu-menu-item-nav">';
     var liLeft = '';
@@ -82,7 +90,7 @@ function LoadSixMenuItem() {
                     '</div>' +
                 '</li>';
     }
-    result = div + liLeft + '</ul> </div> </div>' +divRight+ liRight + enddiv;
+    result = div + liLeft + '</ul> </div> </div>' + divRight + liRight + enddiv + footerdiv;
     $('#tabMenuDetails').append(result);
 
     }

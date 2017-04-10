@@ -112,6 +112,18 @@ namespace BGW.MANAGER.FoodChartMenuManager
             }
         }
 
+        public List<FoodChartMenuModel> LoadSixMenuItem(string categoryName)
+        {
+            
+            try
+            {
+                return _conManager.GetDefaultCollection(_foodChartModel, "MapParameter_1", string.Format("[Masterdata].[spGetSixMenuItemForDashboard] '{0}'",categoryName));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         #endregion
     }
 }

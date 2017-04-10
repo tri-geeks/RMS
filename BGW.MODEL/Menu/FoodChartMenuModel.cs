@@ -91,6 +91,68 @@ namespace BGW.MODEL.Menu
             set { _SubCategoryName = value; }
         }
 
+        #region  Dashboard Six Menu Details
+        private string _menuNameLeft;
+        public string MenuNameLeft
+        {
+            get { return _menuNameLeft; }
+            set { _menuNameLeft = value; }
+        }
+        private string _menuDetailsLeft;
+        public string MenuDetailsLeft
+        {
+            get { return _menuDetailsLeft; }
+            set { _menuDetailsLeft = value; }
+        }
+        private string _virtualPathLeft;
+        public string VirtualPathLeft
+        {
+            get { return _virtualPathLeft; }
+            set { _virtualPathLeft = value; }
+        }
+        private string _actualPathLeft;
+        public string ActualPathLeft
+        {
+            get { return _actualPathLeft; }
+            set { _actualPathLeft = value; }
+        }
+        private string _priceLeft;
+        public string PriceLeft
+        {
+            get { return _priceLeft; }
+            set { _priceLeft = value; }
+        }
+        private string _menuNameRight;
+        public string MenuNameRight
+        {
+            get { return _menuNameRight; }
+            set { _menuNameRight = value; }
+        }
+        private string _menuDetailsRight;
+        public string MenuDetailsRight
+        {
+            get { return _menuDetailsRight; }
+            set { _menuDetailsRight = value; }
+        }
+        private string _virtualPathRight;
+        public string VirtualPathRight
+        {
+            get { return _virtualPathRight; }
+            set { _virtualPathRight = value; }
+        }
+        private string _actualPathRight;
+        public string ActualPathRight
+        {
+            get { return _actualPathRight; }
+            set { _actualPathRight = value; }
+        }
+        private string _priceRight;
+        public string PriceRight
+        {
+            get { return _priceRight; }
+            set { _priceRight = value; }
+        }
+        #endregion
 
 
         public override object[] SetParameter()
@@ -134,6 +196,23 @@ namespace BGW.MODEL.Menu
 
                 _CategoryName = reader.GetToString("CategoryName"),
                 _SubCategoryName = reader.GetToString("SubCategoryName"),
+            };
+        }
+
+        public object MapParameter_1(IDataReader reader)
+        {
+            return new FoodChartMenuModel
+            {
+                _menuNameLeft = reader.GetToString("MenuNameLeft"),
+                _menuDetailsLeft = reader.GetToString("MenuDetailsLeft"),
+                _virtualPathLeft = reader.GetToString("VirtualPathLeft"),
+                _actualPathLeft = reader.GetToString("ActualPathLeft"),
+                _priceLeft = reader.GetToString("PriceLeft"),
+                _menuNameRight = reader.GetToString("MenuNameRight"),
+                _menuDetailsRight = reader.GetToString("MenuDetailsRight"),
+                _virtualPathRight = reader.GetToString("VirtualPathRight"),
+                _actualPathRight = reader.GetToString("ActualPathRight"),
+                _priceRight = reader.GetToString("PriceRight"),
             };
         }
     }

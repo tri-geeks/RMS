@@ -173,5 +173,25 @@ namespace BGW.MANAGER.ReservationManager
         }
         #endregion
 
+        #region Update Booking
+        /* 
+         <=======Arup=====(04/10/2017 11:25PM)>
+         */
+
+        public void UpdateBooking(Int64 bookingId, Int64 bookingStatus)
+        {
+            try
+            {
+                string sql = string.Format("[Reservation].[spUpdateBookingStatus] {0},{1}", bookingId, bookingStatus);
+                _conManager.ExecuteNonQuery(sql);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
     }
 }

@@ -123,6 +123,20 @@ namespace BGW.MANAGER.ReservationManager
                 throw new Exception(ex.Message);
             }
         }
+
+        public void UpdateBookingStatus(Int64 bookingId, Int64 bookingStatus )
+        {
+            try
+            {
+                string sql = string.Format("[Reservation].[spUpdateBookingStatus]  {0},{1}", bookingId, bookingStatus);
+                _conManager.ExecuteNonQuery(sql);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         #endregion
 
     }

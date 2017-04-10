@@ -38,7 +38,20 @@ namespace SSRL.DAL
             }
             
         }
-
+        public void ExecuteNonQuery(string sql)
+        {
+            try
+            {
+                _con.BeginTransection();
+                _con.SaveData(sql);
+                _con.CommitTransection();
+            }
+            catch (Exception)
+            {
+                _con.RollBack();
+                throw;
+            }
+        }
         public List<T> GetCollection<T>(T classobject, string classmethod, string sqlquery)
         {
             try

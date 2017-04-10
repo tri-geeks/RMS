@@ -178,12 +178,25 @@ namespace BGW.MANAGER.ReservationManager
          <=======Arup=====(04/10/2017 11:25PM)>
          */
 
-        public void UpdateBooking(Int64 bookingId, Int64 bookingStatus)
+        //public void UpdateBooking(Int64 bookingId, Int64 bookingStatus)
+        //{
+        //    try
+        //    {
+        //        string sql = string.Format("[Reservation].[spUpdateBookingStatus] {0},{1}", bookingId, bookingStatus);
+        //        _conManager.ExecuteNonQuery(sql);
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
+        public BookingModel GetBookingStatus(Int64 bookingId, Int64 bookingStatus)
         {
             try
             {
-                string sql = string.Format("[Reservation].[spUpdateBookingStatus] {0},{1}", bookingId, bookingStatus);
-                _conManager.ExecuteNonQuery(sql);
+                return _conManager.SingleCollection(_bookingModel, "MapParameter_1", string.Format("SELECT * FROM Reservation.BookingReservation WHERE BookingID={0} AND BookingStatus={1}", bookingId, bookingStatus));
             }
             catch (Exception)
             {

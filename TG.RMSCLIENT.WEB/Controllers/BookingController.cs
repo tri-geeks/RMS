@@ -11,7 +11,12 @@ namespace TG.RMSCLIENT.WEB.Controllers
     {
         ReservationManager _reservationManager = new ReservationManager();
 
-        public ActionResult Index()
+        public ActionResult ConfrimationSuccess()
+        {
+            return View();
+        }
+
+        public ActionResult CancealedSuccess()
         {
             return View();
         }
@@ -20,8 +25,10 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             try
             {
-                _reservationManager.UpdateBookingStatus(bookingId, 2);
-                return RedirectToAction("Index","Home");
+                if (_reservationManager.GetBookingStatus(bookingId, 2) == null)
+                    _reservationManager.UpdateBookingStatus(bookingId, 2);
+                return RedirectToAction("ConfrimationSuccess", "Booking");
+                
             }
             catch (Exception)
             {
@@ -34,8 +41,9 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             try
             {
-                _reservationManager.UpdateBookingStatus(bookingId, 3);
-                return RedirectToAction("Index", "Home");
+                if(_reservationManager.GetBookingStatus(bookingId,3)==null)
+                    _reservationManager.UpdateBookingStatus(bookingId, 3);
+                return RedirectToAction("CancealedSuccess", "Booking");
             }
             catch (Exception)
             {

@@ -598,6 +598,8 @@
     <Content Include="Views\Settings\ReservationType.cshtml" />
     <Content Include="Views\Reservation\ReservationAllocation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Booking\ConfrimationSuccess.cshtml" />
+    <Content Include="Views\Booking\CancealedSuccess.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

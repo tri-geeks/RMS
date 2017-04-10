@@ -53,6 +53,38 @@ $(function () {
         })
         
     });
+
+    //Rating  Option
+     /*
+         * Create time 11.45 PM 4/9/17
+         * Created By : Mithu
+         */
+    $('#fContact').submit(function () {
+        var formdata = new FormData(this);
+        //obj.Save({
+        //    url: rootPath + '/Home/SaveBooking',
+        //    form: formdata
+        //});
+        msg.loading();
+        $.ajax({
+            url: rootPath + '/Home/SaveRatings',
+            type: 'POST',
+            data: formdata,
+            contentType: false,       // The content type used when sending data to the server.
+            cache: false,             // To unable request pages to be cached
+            processData: false,
+            async: false,
+            success: function (data) {
+                msg.hideloading();
+
+               
+            },
+            error: function () {
+                msg.hideloading();
+            }
+        })
+
+    });
 });
 
 

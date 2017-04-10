@@ -73,6 +73,36 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw;
             }
         }
-        
+        #region Ratings App
+        /*
+         * Create time 11.45 PM 4/9/17
+         * Created By : Mithu
+         */
+        public JsonResult SaveRatings(RatingModel _ratingModel)
+        {
+            try
+            {
+                var result = _reservationManager.GetRatingByEmailId(_ratingModel.EmailId);
+                if (result == null)
+                {
+                    _ratingModel.Added();
+                }
+                else
+                {
+                    _ratingModel.Updated();
+                }
+                List<RatingModel> _lstRatingModel = new List<RatingModel>();
+                _lstRatingModel.Add(_ratingModel);
+                _reservationManager.SaveRating(_lstRatingModel);
+                return Json("success");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        #endregion
+
     }
 }

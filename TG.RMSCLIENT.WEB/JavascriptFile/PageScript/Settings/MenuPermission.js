@@ -4,7 +4,7 @@ var msg = new UIStyle();
 $(function () {
     GridName = 'JQMenuList';
     Gridfooter = 'JQMenuPager';
-    LoadUser();
+    LoadUser();    
     ViewControl(true, false, false, false, false, false)
     JQMenuList = $('#JQMenuList');
    
@@ -12,7 +12,6 @@ $(function () {
     $('form').submit(function () {
         var formdata = new FormData(this);
         var menulist = $('#JQMenuList').getRowData();
-        //formdata.append('UserID', $('#UserID').val());
         obj.addListWithForm(formdata, menulist, 'menuList');
         obj.Save({
             url: rootPath + '/Settings/MenuPermissionC',

@@ -4,7 +4,9 @@
     ViewBag.Title = "FoodMenu";
     Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
 }
-<script src="~/assets/js/jquery.min.js"></script>
+
+<script src="~/JavascriptFile/PageScript/FoodMenu.js"></script>
+
 <style type="text/css">
     #mu-reservation {
         background-color: #fff;
@@ -33,73 +35,96 @@
                     </div>
                     <div class="mu-reservation-content">
                         
-                        <form class="mu-reservation-form">
-                            <div class="row"> 
+                        <form class="mu-reservation-form" enctype="multipart/form-data">
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <select class="form-control">
-                                                <option value="0">--Select--</option>
-                                                <option value="1 Person">1 Person</option>
-                                                <option value="2 People">2 People</option>
-                                                <option value="3 People">3 People</option>
-                                                <option value="4 People">4 People</option>
-                                                <option value="5 People">5 People</option>
-                                                <option value="6 People">6 People</option>
-                                                <option value="7 People">7 People</option>
-                                                <option value="8 People">8 People</option>
-                                                <option value="9 People">9 People</option>
-                                                <option value="10 People">10 People</option>
+                                            <input type="hidden" name="MenuID" id="MenuID" />
+                                            <select class="form-control" id="FoodMenu" name="MenuCategoryID">
+                                                <option value="0">--Select Menu--</option>
+                                                <option value="1 Person">1 Menu</option>
+                                                <option value="2 People">2 Menu</option>
+                                                <option value="3 People">3 Menu</option>
+                                                <option value="4 People">4 Menu</option>
+                                                <option value="5 People">5 Menu</option>
+                                                <option value="6 People">6 Menu</option>
+                                                <option value="7 People">7 Menu</option>
+                                                <option value="8 People">8 Menu</option>
+                                                <option value="9 People">9 Menu</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name" name="MName">
+                                            <select class="form-control" id="FoodSubMenu" name="Sub_Category">
+                                                <option value="0">--Select Sub Menu--</option>
+                                                <option value="1 Person">1 Sub Menu</option>
+                                                <option value="2 People">2 Sub Menu</option>
+                                                <option value="3 People">3 Sub Menu</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Price" name="Price">
+                                            <input type="text" class="form-control" placeholder="Name" id="MenuName" name="MenuName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Price" id="Price" name="Price">
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <select class="form-control">
+                                            <select class="form-control" name="Currency" id="Currency">
                                                 <option value="0">--Select Currency--</option>
-                                                <option value="1">Doller</option>
-                                                <option value="2">Taka</option>
-                                                <option value="3">Pound</option>
-                                                
+                                                <option value="1">$ Doller</option>
+                                                <option value="2">৳ Taka</option>
+                                                <option value="3">£ Pound</option>
+
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                        @*<div class="col-md-6 form-group">
+                            <input type="checkbox" class="" name="Isbout"> <span style="color: #444"> About</span>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input type="checkbox" class="" name="IsGallary"> <span style="color: #444"> Gallary</span>
+                        </div>*@
+
                                         <div class="col-md-6 form-group">
-                                            <input type="checkbox" class="" name="Isbout"> <span style="color: #444"> About</span>
+                                            @*<input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>*@
+                                            @Html.CheckBox("Isbout", new { @id = "Isbout" })<span style="color: #444"> Isbout</span>
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <input type="checkbox" class="" name="IsGallary"> <span style="color: #444"> Gallary</span>
+                                            @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                            @Html.CheckBox("IsGallary", new { @id = "IsGallary" })<span style="color: #444"> IsGallary</span>
                                         </div>
 
-                                    </div> 
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" cols="30" rows="8" placeholder="Your Message"></textarea>
+                                            <textarea class="form-control" id="MenuDetails" name="MenuDetails" cols="30" rows="8" placeholder="Your Message"></textarea>
                                         </div>
                                     </div>
-                                </div>                               
-                               
+                                </div>
 
-                                
+
+
                                 <div class="col-md-6">
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            @*<img id="IMG" src="~/assets/img/gallery/big/3.jpg" width="400" height="300" style="border: thin solid #c1a35f;" />*@
                                             <img id="IMG" src="~/assets/img/gallery/big/3.jpg" width="400" height="300" style="border: thin solid #c1a35f;" />
+
+                                            <input type="hidden" name="VirtualPath" id="VirtualPath" />
+                                            <input type="hidden" name="ActualPath" id="ActualPath" />
                                         </div>
                                     </div>
-                                   
+
                                     <div class="col-lg-12 col-md-12" style="padding:10px">
                                         <input type="file" name="file" id="up" style="display:none" value="browse">
                                         @*<button type="button" value="Upload" class="btn btn-warning" id="upload"><span class="">Upload</span></button>*@
@@ -110,16 +135,38 @@
                                         <button class="mu-readmore-btn" type="button" id="remove">
                                             @*<i class="ace-icon fa fa-trash-o"></i>*@
                                             Remove
-                                            
+
                                         </button>
                                     </div>
 
-                                </div>                               
-                                
-                                <div class="col-md-12">
-                                    <button type="button" class="mu-readmore-btn">Search</button><button type="submit" class="mu-readmore-btn">Make Menu</button>
                                 </div>
-                                
+
+
+
+                                <div class="col-md-12">
+                                    <button type="button" class="mu-readmore-btn" onclick="fNew()">New</button>
+                                    <button type="button" class="mu-readmore-btn" onclick="Search()">Search</button>
+                                    <button type="submit" class="mu-readmore-btn">Make Menu</button>
+                                </div>
+
+                                @*<div class="col-md-12">
+                                    <div class="col-md-12">
+
+                                        <table id="JQFoodMenuList"></table>
+                                        <div id="JQFoodMenuPager"></div>
+                                    </div>
+
+                                </div>*@
+
+                            </div>
+                            </br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <table id="JQFoodMenuList"></table>
+                                        <div id="JQFoodMenuPager"></div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -128,7 +175,7 @@
         </div>
     </div>
 </section>
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(function () {
         $('#upload').click(function () {
             Upload()
@@ -147,4 +194,4 @@
     function Remove() {
         $("#IMG").fadeIn("fast").attr('src', '')
     }
-</script>
+</script>*@

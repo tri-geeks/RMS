@@ -15112,7 +15112,7 @@ hs=function(w,t,c){return w.each(function(){var s=this._jqm;$(t).each(function()
 	//opts can be id:row id for the row, rowdata:the data for the row, colmodel:the column model for this column
 	//example {id:1234,}
 	$.extend($.fmatter,{
-		isBoolean : function(o) {
+		isboolean : function(o) {
 			return typeof o === 'boolean';
 		},
 		isObject : function(o) {
@@ -15125,7 +15125,7 @@ hs=function(w,t,c){return w.each(function(){var s=this._jqm;$(t).each(function()
 			return typeof o === 'number' && isFinite(o);
 		},
 		isValue : function (o) {
-			return (this.isObject(o) || this.isString(o) || this.isNumber(o) || this.isBoolean(o));
+			return (this.isObject(o) || this.isString(o) || this.isNumber(o) || this.isboolean(o));
 		},
 		isEmpty : function(o) {
 			if(!this.isString(o) && this.isValue(o)) {

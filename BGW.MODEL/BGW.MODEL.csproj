@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="FoodBank\FoodMenuModel.cs" />
     <Compile Include="FoodBank\RatingLog.cs" />
+    <Compile Include="Menu\FoodChartMenuModel.cs" />
     <Compile Include="Production\ProductionEntry\DailyProductionMasterModel.cs" />
     <Compile Include="Production\ProductionEntry\DailyProductionModel.cs" />
     <Compile Include="Production\ProductionEntry\ShiftWiseProductionModel.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Report\ReportModuleModel.cs" />
     <Compile Include="Report\ReportParameterModel.cs" />
     <Compile Include="Reservation\BookingModel.cs" />
+    <Compile Include="Reservation\RatingModel.cs" />
     <Compile Include="Reservation\ReservationAllocationModel.cs" />
     <Compile Include="Settings\EnergyConsumtionModel\EnergySourceModel.cs" />
     <Compile Include="Settings\EnergyConsumtionModel\EnergyUnitModel.cs" />

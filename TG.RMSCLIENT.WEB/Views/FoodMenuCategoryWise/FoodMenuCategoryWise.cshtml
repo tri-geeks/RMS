@@ -1,211 +1,552 @@
-﻿<section id="mu-gallery">
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="mu-gallery-area">
-                <div class="mu-title">
-                    <span class="mu-subtitle">Discover</span>
-                    <h2>Our Gallery</h2>
-                    <i class="fa fa-spoon"></i>
-                    <span class="mu-title-bar"></span>
-                </div>
-                <div class="mu-gallery-content">
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<script src="~/assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
 
-                    <!-- Start gallery image -->
-                    <div class="mu-gallery-body">
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/1.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/1.jpg" alt="img-1" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
+        $('.navbar-admin').css({ 'background-color': '#444', 'padding': '10px 0' })
+    })
+</script>
+
+<section id="mu-restaurant-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-restaurant-menu-area">
+                    <div class="mu-title">
+                        <span class="mu-subtitle">Discover</span>
+                        <h2>OUR MENU</h2>
+                        <i class="fa fa-spoon"></i>
+                        <span class="mu-title-bar"></span>
+                    </div>
+                    <div class="mu-restaurant-menu-content">
+                        <ul class="nav nav-tabs mu-restaurant-menu" id="ul">
+                            <li class="active"><a href="#breakfast" data-toggle="tab">Breakfast</a></li>
+                                <li><a href="#meals" data-toggle="tab">Meals</a></li>
+                                <li><a href="#snacks" data-toggle="tab">Snacks</a></li>
+                                <li><a href="#desserts" data-toggle="tab">Desserts</a></li>
+                                <li><a href="#drinks" data-toggle="tab">Drinks</a></li>
+                        </ul>
+
+                        
+                        <div class="tab-content" id="tabMenuDetails">
+                            <div class="tab-pane fade in active" id="breakfast">
+                                    <div class="mu-tab-content-area">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-left">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-1.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-2.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-1.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-right">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-1.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-2.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-1.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/2.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/2.jpg" alt="img-2" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
+                                <div class="tab-pane fade " id="meals">
+                                    <div class="mu-tab-content-area">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-left">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-3.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-4.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-3.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-right">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-4.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-3.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-4.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/3.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/3.jpg" alt="img-3" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
+                                <div class="tab-pane fade " id="snacks">
+                                    <div class="mu-tab-content-area">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-left">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-5.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-6.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-5.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-right">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-5.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-6.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-5.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/4.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/4.jpg" alt="img-4" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
+                                <div class="tab-pane fade " id="desserts">
+                                    <div class="mu-tab-content-area">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-left">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-7.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-8.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-7.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-right">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-8.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-7.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-8.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/5.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/5.jpg" alt="img-5" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
+                                <div class="tab-pane fade " id="drinks">
+                                    <div class="mu-tab-content-area">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-left">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-9.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-10.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-9.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mu-tab-content-right">
+                                                    <ul class="mu-menu-item-nav">
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-9.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">English Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-10.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Chines Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$11.95</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="media">
+                                                                <div class="media-left">
+                                                                    <a href="#">
+                                                                        <img class="media-object" src="~/assets/img/menu/item-9.jpg" alt="img">
+                                                                    </a>
+                                                                </div>
+                                                                <div class="media-body">
+                                                                    <h4 class="media-heading"><a href="#">Indian Breakfast</a></h4>
+                                                                    <span class="mu-menu-price">$15.85</span>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere nulla aliquid praesentium dolorem commodi illo.</p>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/6.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/6.jpg" alt="img-6" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/7.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/7.jpg" alt="img-7" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/8.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/8.jpg" alt="img-8" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
-                        <!-- start single gallery image -->
-                        <div class="mu-single-gallery col-md-4">
-                            <div class="mu-single-gallery-item">
-                                <figure class="mu-single-gallery-img">
-                                    <a href="#"><img alt="img" src="assets/img/gallery/small/9.jpg"></a>
-                                </figure>
-                                <div class="mu-single-gallery-info">
-                                    <a href="#" class="mu-view-btn">
-                                        <img src="assets/img/plus.png" alt="plus icon img">
-                                    </a>
-                                    <div class="portfolio-detail">
-                                        <a href="#" class="modal-close-btn"><span class="fa fa-times"></span></a>
-                                        <img src="assets/img/gallery/big/9.jpg" alt="img-9" />
-                                        <h2>Gallery Item Title</h2>
-                                        <p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <a href="#" class="view-project-btn">Live Demo</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End single gallery image -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </section>

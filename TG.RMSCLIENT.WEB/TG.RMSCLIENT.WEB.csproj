@@ -139,6 +139,7 @@
     <Content Include="assets\css\bootstrap-duallistbox.min.css" />
     <Content Include="assets\css\bootstrap-editable.min.css" />
     <Content Include="assets\css\bootstrap-multiselect.min.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
     <Content Include="assets\css\bootstrap-timepicker.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -153,6 +154,7 @@
     <Content Include="assets\css\jquery-ui.custom.min.css" />
     <Content Include="assets\css\jquery-ui.min.css" />
     <Content Include="assets\css\jquery.gritter.min.css" />
+    <Content Include="assets\css\main.css" />
     <Content Include="assets\css\prettify.min.css" />
     <Content Include="assets\css\select2.min.css" />
     <Content Include="assets\css\slick.css" />
@@ -278,6 +280,7 @@
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\jquery.counterup.js" />
     <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\modernizr-2.6.2-respond-1.1.0.min.js" />
     <Content Include="assets\js\slick.js" />
     <Content Include="assets\js\waypoints.js" />
     <Content Include="assets\ModalCS\bootstrap-dialog.css" />

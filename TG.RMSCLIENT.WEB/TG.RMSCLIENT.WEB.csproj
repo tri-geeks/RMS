@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\FoodMenuCategoryWiseController.cs" />
     <Compile Include="Controllers\FoodMenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
@@ -597,6 +598,7 @@
     <Content Include="Views\Settings\ReservationType.cshtml" />
     <Content Include="Views\Reservation\ReservationAllocation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\FoodMenuCategoryWise\FoodMenuCategoryWise.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

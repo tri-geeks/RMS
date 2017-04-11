@@ -1358,28 +1358,28 @@
                     <div class="mu-contact-content">
                         <div class="row">
                             @*Contact with Rating*@
-                            <form class="mu-contact-form" id="fContact">
+                            <form class="" id="fContact">
                                 <div class="col-md-6">
-                                    <div class="mu-contact-left">
+                                    <div class="mu-contact-left mu-contact-form">
                                         @*<form class="mu-contact-form" id="fContact">*@
-                                        <div class="form-group">
+                                        <div class="form-group mu-contact-form">
                                             <label for="name">Your Name</label>
                                             <input type="text" class="form-control" id="Name" name="Name" placeholder="Name">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group mu-contact-form">
                                             <label for="email">Email address</label>
                                             <input type="email" class="form-control" id="EmailId" name="EmailId" placeholder="Email">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group mu-contact-form">
                                             <label for="email">Phone</label>
                                             <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Phone">
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mu-contact-form">
                                             <label for="subject">Subject</label>
                                             <input type="text" class="form-control" id="Subject" name="Subject" placeholder="Subject">
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group mu-contact-form">
                                             <label for="message">Message</label>
                                             <textarea class="form-control" id="Message" name="Message" cols="30" rows="10" placeholder="Type Your Message"></textarea>
                                         </div>
@@ -1388,30 +1388,62 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="mu-contact-right">
+                                    <div class="mu-contact-right mu-contact-form">
+                                        @*<div class="form-group mu-contact-form">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="Message" name="Message" cols="30" rows="10" placeholder="Type Your Message"></textarea>
+            </div>*@
+                                        <style type="text/css">
+                                            .rating {
+                                                overflow: hidden;
+                                                display: inline-block;
+                                            }
+
+                                            .rating-input {
+                                                position: absolute;
+                                                left: 0;
+                                                top: -50px;
+                                            }
+
+                                            .rating-star {
+                                                display: block;
+                                                float: right;
+                                                width: 16px;
+                                                height: 16px;
+                                                background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+                                            }
+
+                                                .rating-star:hover,
+                                                .rating-star:hover ~ .rating-star,
+                                                .rating-input:checked ~ .rating-star {
+                                                    background-position: 0 0;
+                                                }
+                                        </style>
                                         <div class="mu-contact-widget">
                                             <h3>Rate Us</h3>
-                                            <div class="col-md-2 form-group">
-                                                @*<input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>*@
-                                                @Html.CheckBox("Star1", new { @id = "Star1" })
-                                            </div>
-                                            <div class="col-md-2 form-group">
-                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                @Html.CheckBox("Star2", new { @id = "Star2" })
-                                            </div>
-                                            <div class="col-md-2 form-group">
-                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                @Html.CheckBox("Star3", new { @id = "Star3" })
-                                            </div>
-                                            <div class="col-md-2 form-group">
-                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                @Html.CheckBox("Star4", new { @id = "Star4" })
-                                            </div>
-                                            <div class="col-md-2 form-group">
-                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                @Html.CheckBox("Star5", new { @id = "Star5" })
-                                            </div>
-                                        </div>
+                                            <span class="rating">
+                                              
+                                                    @*<input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>*@
+                                                    @Html.CheckBox("Star1", new { @id = "Star1", @class="rating - input" })
+                                                
+                                                    <label for="rating-input-1-5" class="rating-star"></label>
+                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                    @Html.CheckBox("Star2", new { @id = "Star2", @class = "rating - input" })
+                                               
+                                                <label for="rating-input-1-5" class="rating-star"></label>
+                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                    @Html.CheckBox("Star3", new { @id = "Star3", @class = "rating - input" })
+                                               
+                                                <label for="rating-input-1-5" class="rating-star"></label>
+                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                    @Html.CheckBox("Star4", new { @id = "Star4", @class = "rating - input" })
+                                                <label for="rating-input-1-5" class="rating-star"></label>
+                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                    @Html.CheckBox("Star5", new { @id = "Star5", @class = "rating - input" })
+                                               
+                                        
+                                        </span>
+
                                         <div class="mu-contact-widget">
 
                                         </div>

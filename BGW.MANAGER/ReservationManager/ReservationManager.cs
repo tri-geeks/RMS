@@ -16,6 +16,7 @@ namespace BGW.MANAGER.ReservationManager
         ReservationAllocationModel _reservationAllocationModel = new ReservationAllocationModel();
         ReservationTypeModel _reservationTypeModel = new ReservationTypeModel();
         BookingModel _bookingModel = new BookingModel();
+        RatingModel _ratingModel = new RatingModel();
         #endregion
         #region Save Reservation Allocation
         public void SaveReservationAllocation(List<ReservationAllocationModel> allocationlist)
@@ -121,6 +122,86 @@ namespace BGW.MANAGER.ReservationManager
             catch(Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateBookingStatus(Int64 bookingId, Int64 bookingStatus )
+        {
+            try
+            {
+                string sql = string.Format("[Reservation].[spUpdateBookingStatus]  {0},{1}", bookingId, bookingStatus);
+                _conManager.ExecuteNonQuery(sql);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+
+
+
+        #region Rating
+        /*
+         * Create time 11.45 PM 4/9/17
+         */
+        public void SaveRating(List<RatingModel> ratinglist)
+        {
+            try
+            {
+                _conManager.SaveCollection(ratinglist);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public RatingModel GetRatingByEmailId(string email)
+        {
+            try
+            {
+                return _conManager.SingleCollection(_ratingModel, string.Format("Select * from Ratings Where EmailId='{0}'", email));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Update Booking
+        /* 
+         <=======Arup=====(04/10/2017 11:25PM)>
+         */
+
+        //public void UpdateBooking(Int64 bookingId, Int64 bookingStatus)
+        //{
+        //    try
+        //    {
+        //        string sql = string.Format("[Reservation].[spUpdateBookingStatus] {0},{1}", bookingId, bookingStatus);
+        //        _conManager.ExecuteNonQuery(sql);
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
+
+        public BookingModel GetBookingStatus(Int64 bookingId, Int64 bookingStatus)
+        {
+            try
+            {
+                return _conManager.SingleCollection(_bookingModel, "MapParameter_1", string.Format("SELECT * FROM Reservation.BookingReservation WHERE BookingID={0} AND BookingStatus={1}", bookingId, bookingStatus));
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
         #endregion

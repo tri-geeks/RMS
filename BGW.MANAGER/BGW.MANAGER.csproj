@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="FoodChartMenuManager\FoodChartMenuManager.cs" />
+    <Compile Include="FoodMenuCategoryWise\FoodMenuCategoryWise.cs" />
     <Compile Include="Production\DailyProductionManager\DailyProductionManager.cs" />
     <Compile Include="Production\DailyProductionManager\ShiftWiseProductionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

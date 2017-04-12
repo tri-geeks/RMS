@@ -396,6 +396,7 @@
     <Content Include="JavascriptFile\PageScript\Settings\ReservationType.js" />
     <Content Include="JavascriptFile\PageScript\Settings\SubCategory.js" />
     <Content Include="JavascriptFile\PageScript\Settings\UserInformation.js" />
+    <Content Include="JavascriptFile\PageScript\SubMenuCategoryWise.js" />
     <Content Include="JavascriptFile\PageScript\ViewMenulist.js" />
     <Content Include="JavascriptFile\plugins\grid.addons.js" />
     <Content Include="JavascriptFile\plugins\grid.postext.js" />

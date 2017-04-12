@@ -16,5 +16,10 @@ namespace TG.RMSCLIENT.WEB.Controllers
             return View("FoodMenuCategoryWise");
         }
 
+        public JsonResult GetFoodSubMenuListByCategory(Int64 cateroryID)
+        {
+            return Json(_FoodChartMenuManager.GetFoodMenuListByMenuID(cateroryID), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

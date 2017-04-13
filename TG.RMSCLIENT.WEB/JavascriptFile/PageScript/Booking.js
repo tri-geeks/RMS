@@ -18,9 +18,16 @@ $(function () {
             values: { 'Qty': BookingQty, 'BookingDate': BookingDate, 'BookingType': reservationType}
         });
         if (data == 0) {
-            alert('No available sit')
+            msg.message('No availabe site');
+            //alert('No available sit');        
             $('#BookingQty').focus();
         }
+        else if (data == 2) {
+            msg.message('No available reservation allocation in this date');
+            //alert('No available reservation allocation in this date');
+            $('#BookingQty').focus();
+        }
+            
             //obj.TGModal("No availabe reservation")
 
 
@@ -43,9 +50,15 @@ $(function () {
             async: false,
             success: function (data) {
                 msg.hideloading();
+                if (data != 0 && data != 2)
+                    window.open('https://www.youtube.com/results?search_query=tumi+andhar+dekho');
+                else if (data == 0)
+                    alert('No available Quantity')
+                else if (data == 2)
+                    alert('No available reservation allocation in this date');
+
+                //window.location.href(rootPath + '/Home/Index');
                 
-                window.location.href(rootPath + '/Home/Index');
-                window.open('https://www.youtube.com/results?search_query=tumi+andhar+dekho');
             },
             error: function () {
                 msg.hideloading();

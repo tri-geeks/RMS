@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.MANAGER.FoodMenuCategoryWiseManager;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -10,16 +11,17 @@ namespace TG.RMSCLIENT.WEB.Controllers
     {
         //
         // GET: /FoodMenuCategoryWise/
+        
 
         public ActionResult Index()
         {
             return View("FoodMenuCategoryWise");
         }
 
-        public JsonResult GetFoodSubMenuListByCategory(Int64 cateroryID)
-        {
-            return Json(_FoodChartMenuManager.GetFoodMenuListByMenuID(cateroryID), JsonRequestBehavior.AllowGet);
-        }
+        //public JsonResult GetFoodSubMenuListByCategory(Int64 cateroryID)
+        //{
+        //    return Json(_FoodChartMenuManager.GetFoodMenuListByMenuID(cateroryID), JsonRequestBehavior.AllowGet);
+        //}
 
     }
 }

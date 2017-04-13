@@ -16,6 +16,34 @@
             document.getElementById('warning').style.display = 'none';           
         }, 5000);       
     };
+
+    this.message = function (message) {
+        $('#warning span').append(message);
+        document.getElementById('warning').style.display = 'block';
+        setTimeout(function () {
+            $('#warning span').empty();
+            document.getElementById('warning').style.display = 'none';
+        }, 5000);
+    };
+
+    this.messageSave = function (message) {
+        $('#success span').append(message);
+        document.getElementById('warning').style.display = 'block';
+        setTimeout(function () {
+            $('#success span').empty();
+            document.getElementById('success').style.display = 'none';
+        }, 5000);
+    };
+
+    this.messageError = function (message) {
+        $('#error span').append(message);
+        document.getElementById('error').style.display = 'block';
+        setTimeout(function () {
+            $('#error span').empty();
+            document.getElementById('error').style.display = 'none';
+        }, 5000);
+    };
+
     this.success = function () {
         document.getElementById('success').style.display = 'block';
         setTimeout(function () {

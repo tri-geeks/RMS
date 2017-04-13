@@ -20,16 +20,26 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             try
             {
-                if (bookingmodel.BookingID == 0)
+                var res = CheckAvailability(Convert.ToInt32( bookingmodel.BookingQty), bookingmodel.BookingDate, bookingmodel.BookingStatus);
+                if (res == (object)0)
+                    return Json(0);
+                else if(res==(object)2)
+                    return Json(2);
+                else
                 {
-                    bookingmodel.Added();
-                    bookingmodel.BookingStatus = 1;
+                    if (bookingmodel.BookingID == 0)
+                    {
+                        bookingmodel.Added();
+                        bookingmodel.BookingStatus = 1;
+                    }
+
+                    List<BookingModel> bookinglist = new List<BookingModel>();
+                    bookinglist.Add(bookingmodel);
+                    var id = _reservationManager.SaveBooking(bookinglist);
+                    System.Web.HttpContext.Current.Session["Email"] = bookingmodel.Email;
+                    return Json(id);
                 }
-                    
-                List<BookingModel> bookinglist = new List<BookingModel>();
-                bookinglist.Add(bookingmodel);
-                var id = _reservationManager.SaveBooking(bookinglist);
-                return Json(id);
+                
             }
             catch(Exception ex)
             {
@@ -73,6 +83,26 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw;
             }
         }
+
+        public string ConfirmURL(Int64 Id)
+        {
+            try
+            {
+                string UrlConfirm = string.Format("Booking/ConfirmBooking?bookingId={0}",Id);
+                string UrlCanceal = string.Format("Booking/CancealedBooking?bookingId={0}", Id);
+                string htmlConform = "<p>If you want confirm booking then click on confirm link<span><a href="+ UrlConfirm + ">Confirm</a></span></p>"+"<br/>"+
+                                        "<p>If you want canceal booking then click on canceal link<span><a href=" + UrlCanceal + ">Canceal</a></span></p>";
+                return htmlConform;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+
         #region Ratings App
         /*
          * Create time 11.45 PM 4/9/17

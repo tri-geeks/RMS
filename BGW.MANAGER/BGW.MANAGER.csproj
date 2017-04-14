@@ -31,8 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc">
       <HintPath>..\..\..\..\Desktop\System.Web.Mvc.dll</HintPath>
     </Reference>
@@ -44,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Email\EmailCriteriaVM.cs" />
+    <Compile Include="Email\EmailManager.cs" />
     <Compile Include="FoodChartMenuManager\FoodChartMenuManager.cs" />
     <Compile Include="FoodMenuCategoryWise\FoodMenuCategoryWise.cs" />
     <Compile Include="Production\DailyProductionManager\DailyProductionManager.cs" />

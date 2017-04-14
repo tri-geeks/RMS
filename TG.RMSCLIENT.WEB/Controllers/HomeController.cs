@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using BGW.MANAGER.ReservationManager;
 using BGW.MODEL.Reservation;
+using BGW.MANAGER.Email;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
     public class HomeController : Controller
     {
         ReservationManager _reservationManager = new ReservationManager();
+        EmailManager objEamilManager = new EmailManager();
+        EmailCriteriaVM objEmailCriteriaVM = new EmailCriteriaVM();
         public ActionResult Index()
         {
             return View();
@@ -36,8 +39,12 @@ namespace TG.RMSCLIENT.WEB.Controllers
                     List<BookingModel> bookinglist = new List<BookingModel>();
                     bookinglist.Add(bookingmodel);
                     var id = _reservationManager.SaveBooking(bookinglist);
-                    System.Web.HttpContext.Current.Session["Email"] = bookingmodel.Email;
-                    return Json(id);
+                    //System.Web.HttpContext.Current.Session["Email"] = bookingmodel.Email;
+                    objEmailCriteriaVM.Content = ConfirmURL(id);
+                    objEmailCriteriaVM.Subject = "Reservation Confirmation";
+                    objEmailCriteriaVM.ToEmailAddress = bookingmodel.Email;
+                    objEamilManager.Email(objEmailCriteriaVM);
+                    return Json("success");
                 }
                 
             }
@@ -46,7 +53,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
+        
         public JsonResult CboReservationType()
         {
             try

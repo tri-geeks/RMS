@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BGW.MANAGER.FoodMenuCategoryWiseManager;
+using BGW.MANAGER.FoodChartMenuManager;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -11,17 +12,26 @@ namespace TG.RMSCLIENT.WEB.Controllers
     {
         //
         // GET: /FoodMenuCategoryWise/
-        
 
-        public ActionResult Index()
+        FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
+        public ActionResult Index(string categoryName)
         {
+            ViewBag.categoryName = categoryName;
             return View("FoodMenuCategoryWise");
         }
 
-        //public JsonResult GetFoodSubMenuListByCategory(Int64 cateroryID)
-        //{
-        //    return Json(_FoodChartMenuManager.GetFoodMenuListByMenuID(cateroryID), JsonRequestBehavior.AllowGet);
-        //}
+        public JsonResult LoadSubMenuTabItem(string categoryName)
+        {
+            try
+            {
+                return Json(_FoodChartMenuManager.LoadSubMenuTabItem(categoryName), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
 
     }
 }

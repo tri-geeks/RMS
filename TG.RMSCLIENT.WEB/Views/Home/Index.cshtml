@@ -1111,10 +1111,84 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="mu-subscription-area">
+                    <style type="text/css">
+                        .rating {
+                            float: left;
+                        }
+
+                            /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+                            .rating:not(:checked) > input {
+                                position: absolute;
+                                top: -9999px;
+                                clip: rect(0,0,0,0);
+                            }
+
+                            .rating:not(:checked) > label {
+                                float: right;
+                                width: 1em;
+                                padding: 0 .1em;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                cursor: pointer;
+                                font-size: 200%;
+                                line-height: 1.2;
+                                color: #ddd;
+                                text-shadow: 1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+                            }
+
+                                .rating:not(:checked) > label:before {
+                                    content: '★ ';
+                                }
+
+                            .rating > input:checked ~ label {
+                                color: #f70;
+                                text-shadow: 1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+                            }
+
+                            .rating:not(:checked) > label:hover,
+                            .rating:not(:checked) > label:hover ~ label {
+                                color: gold;
+                                text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+                            }
+
+                            .rating > input:checked + label:hover,
+                            .rating > input:checked + label:hover ~ label,
+                            .rating > input:checked ~ label:hover,
+                            .rating > input:checked ~ label:hover ~ label,
+                            .rating > label:hover ~ input:checked ~ label {
+                                color: #ea0;
+                                text-shadow: 1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+                            }
+
+                            .rating > label:active {
+                                position: relative;
+                                top: 2px;
+                                left: 2px;
+                            }
+                    </style>
+
+                    @*<fieldset class="rating">
+                        <legend>Please rate:</legend>
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                    </fieldset>*@
                     <form class="mu-subscription-form">
-                        <input type="text" placeholder="Type Your Email Address">
-                        <button class="mu-readmore-btn" type="Submit">SUBSCRIBE</button>
-                    </form>
+                       
+                        <fieldset class="rating">
+                            <input type="text" placeholder="Type Your Email Address">
+                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                            <button class="mu-readmore-btn" type="Submit">SUBSCRIBE</button>
+                        </fieldset>
+</form>
                 </div>
             </div>
         </div>
@@ -1394,56 +1468,59 @@
                 <textarea class="form-control" id="Message" name="Message" cols="30" rows="10" placeholder="Type Your Message"></textarea>
             </div>*@
                                         <style type="text/css">
-                                            .rating {
-                                                overflow: hidden;
-                                                display: inline-block;
+                                            .class_checkbox {
+                                                width: 20px;
+                                                height: 20px;
+                                                /*background-color: red;*/
+                                                padding: 25px;
+                                                background-image: url(/assets/img/menu/Star-blank.jpg);
+                                                background-repeat: no-repeat;
                                             }
 
-                                            .rating-input {
-                                                position: absolute;
-                                                left: 0;
-                                                top: -50px;
-                                            }
-
-                                            .rating-star {
-                                                display: block;
-                                                float: right;
-                                                width: 16px;
-                                                height: 16px;
-                                                background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
-                                            }
-
-                                                .rating-star:hover,
-                                                .rating-star:hover ~ .rating-star,
-                                                .rating-input:checked ~ .rating-star {
-                                                    background-position: 0 0;
+                                                .class_checkbox.checked {
+                                                    /*background-color: green;*/
+                                                    background-image: url(/assets/img/menu/Star-Shape.png);
+                                                    background-repeat:no-repeat;
                                                 }
+                                           
                                         </style>
                                         <div class="mu-contact-widget">
                                             <h3>Rate Us</h3>
-                                            <span class="rating">
-                                              
-                                                    @*<input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>*@
-                                                    @Html.CheckBox("Star1", new { @id = "Star1", @class="rating - input" })
-                                                
-                                                    <label for="rating-input-1-5" class="rating-star"></label>
-                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                    @Html.CheckBox("Star2", new { @id = "Star2", @class = "rating - input" })
-                                               
-                                                <label for="rating-input-1-5" class="rating-star"></label>
-                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                    @Html.CheckBox("Star3", new { @id = "Star3", @class = "rating - input" })
-                                               
-                                                <label for="rating-input-1-5" class="rating-star"></label>
-                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                    @Html.CheckBox("Star4", new { @id = "Star4", @class = "rating - input" })
-                                                <label for="rating-input-1-5" class="rating-star"></label>
-                                                    @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
-                                                    @Html.CheckBox("Star5", new { @id = "Star5", @class = "rating - input" })
-                                               
-                                        
-                                        </span>
+                                            <div class="rating" style="padding:10px">
 
+                                                @*<input type="checkbox" class="" name="IsAdmin" id="IsAdmin"> <span style="color: #444"> Admin</span>*@
+                                                @Html.CheckBox("Star1", new { @id = "Star1", @class = "input_class_checkbox" })
+
+
+                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                @Html.CheckBox("Star2", new { @id = "Star2", @class = "input_class_checkbox" })
+
+
+                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                @Html.CheckBox("Star3", new { @id = "Star3", @class = "input_class_checkbox" })
+
+
+                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                @Html.CheckBox("Star4", new { @id = "Star4", @class = "input_class_checkbox" })
+
+                                                @*<input type="checkbox" class="" name="IsActive" id="IsActive"> <span style="color: #444"> Active</span>*@
+                                                @Html.CheckBox("Star5", new { @id = "Star5", @class = "input_class_checkbox" })
+
+
+                                            </div>
+                                        <script type="text/javascript">
+                                            $(function () {
+                                                $('.input_class_checkbox').each(function () {
+                                                    $(this).hide().after('<div class="class_checkbox col-lg-2 col-md-2" />');
+
+                                                });
+
+                                                $('.class_checkbox').on('click', function () {
+                                                    $(this).toggleClass('checked').prev().prop('checked', $(this).is('.checked'))
+                                                });
+                                            })
+                                            
+                                        </script>
                                         <div class="mu-contact-widget">
 
                                         </div>

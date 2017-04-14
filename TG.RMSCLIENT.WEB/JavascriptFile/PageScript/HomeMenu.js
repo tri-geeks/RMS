@@ -40,7 +40,7 @@ function LoadSixMenuItem(categoryName) {
     });
     var result='';
     var div = '';
-    div = '<div class="tab-pane fade in active" id="' + res[0].CategoryName + '">' +
+    cdiv = '<div class="tab-pane fade in active" id="' + categoryName + '">' +
                 '<div class="mu-tab-content-area">'+
                     '<div class="row">'+
                         '<div class="col-md-6">'+
@@ -54,7 +54,7 @@ function LoadSixMenuItem(categoryName) {
               '</div>' +
             '</div>';
     var footerdiv = '';
-    footerdiv = '<a href="#' + res[0].CategoryName + '" data-toggle="tab" class="mu-readmore-btn"> Read More </a> ';
+    footerdiv = '<a href="' + rootPath + '/FoodMenuCategoryWise/Index?categoryName=' + categoryName + '"> Read More </a> ';
     var divRight = '';
     divRight = '<div class="col-md-6">  <div class="mu-tab-content-right"> <ul class="mu-menu-item-nav">';
     var liLeft = '';

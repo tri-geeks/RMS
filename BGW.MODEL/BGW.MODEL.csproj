@@ -43,6 +43,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="FoodBank\FoodMenuModel.cs" />
     <Compile Include="FoodBank\RatingLog.cs" />
+    <Compile Include="FoodBank\test.cs" />
     <Compile Include="Menu\FoodChartMenuModel.cs" />
     <Compile Include="Menu\FoodMenuCategoryWiseModel.cs" />
     <Compile Include="Production\ProductionEntry\DailyProductionMasterModel.cs" />

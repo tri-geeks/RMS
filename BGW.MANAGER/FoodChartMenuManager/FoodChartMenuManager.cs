@@ -141,6 +141,19 @@ namespace BGW.MANAGER.FoodChartMenuManager
             }
         }
 
+        public List<FoodMenuCategoryWiseModel> LoadAllSubCategoryItem(string SubCategoryName)
+        {
+
+            try
+            {
+                return _conManager.GetDefaultCollection(_foodMenuCategoryWiseModel, "MapParameter_3", string.Format("[Settings].[spGetSubCategoryDetails] '{0}'", SubCategoryName));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         
     }
 }

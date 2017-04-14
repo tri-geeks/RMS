@@ -78,7 +78,17 @@
         @RenderBody()        
     </div>    
          
-    
+    <section>
+        <div class="alert alert-warning" id="warning" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
+            <strong>Warning!</strong> @*Password and Confirm Password must be same.*@<span></span>
+        </div>
+        <div class="alert alert-success" id="success" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
+            <strong>Information!</strong> @*Saved successfully.*@<span></span>
+        </div>
+        <div class="alert alert-danger" id="error" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
+            <strong>Danger!</strong> @*Error saving.*@<span></span>
+        </div>
+    </section>
     <!-- Start Map section -->
    
     <!-- End Map section -->

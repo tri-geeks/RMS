@@ -34,31 +34,36 @@ function LoadTabItem() {
 }
 
 function LoadSixMenuItem(categoryName) {
+    var footerdiv = '';
+    var divRight = '';
+    var liLeft = '';
+    var liRight = '';
+    var div = '';
+    var enddiv = '';
+    var result = '';
     res = obj.Getdata({
         url: rootPath + '/ViewMenu/LoadSixMenuItem',
         values: {'categoryName':categoryName},
     });
-    var result='';
-    var div = '';
-    cdiv = '<div class="tab-pane fade in active" id="' + categoryName + '">' +
+    
+    div = '<div class="tab-pane fade in active" id="' + categoryName + '">' +
                 '<div class="mu-tab-content-area">'+
                     '<div class="row">'+
                         '<div class="col-md-6">'+
                             '<div class="mu-tab-content-left">'+
                                 '<ul class="mu-menu-item-nav">';
-    var enddiv = '';
+    
     enddiv = '</ul>' +
                         '</div>' +
                     '</div>' + 
                 '</div>' +
               '</div>' +
             '</div>';
-    var footerdiv = '';
+    
     footerdiv = '<a href="' + rootPath + '/FoodMenuCategoryWise/Index?categoryName=' + categoryName + '"> Read More </a> ';
-    var divRight = '';
+    
     divRight = '<div class="col-md-6">  <div class="mu-tab-content-right"> <ul class="mu-menu-item-nav">';
-    var liLeft = '';
-    var liRight = '';
+    
     for (var i = 0; i < res.length; i++) {
         liLeft += '<li>' +
                     '<div class="media">' +

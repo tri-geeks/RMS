@@ -87,7 +87,45 @@
         }
         st.hideloading();
         return result;
-    }    
+    }
+
+
+    this.Getdata_1 = function (object) {
+        
+        var result = '';
+        if (!object.values) {
+            $.ajax({
+                url: object.url,
+                type: 'POST',
+                dataType: 'json',
+                //data:object,
+                async: false,
+                success: function (data) {
+                    result = data;
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+        }
+        else if (object.values) {
+            $.ajax({
+                url: object.url,
+                type: 'POST',
+                data: object.values,
+                dataType: 'json',
+                async: false,
+                success: function (data) {
+                    result = data;
+                },
+                error: function (data) {
+                    alert('No data found');
+                }
+            });
+        }
+       
+        return result;
+    }
    //**************** Load drop down ***********************
     this.loaddrop = function(url,object,select){
         st.loading(); 

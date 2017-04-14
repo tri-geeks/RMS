@@ -33,5 +33,18 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
+        public JsonResult LoadAllSubCategoryItem(string SubCategoryName)
+        {
+            try
+            {
+                return Json(_FoodChartMenuManager.LoadAllSubCategoryItem(SubCategoryName), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

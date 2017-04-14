@@ -15,6 +15,7 @@ namespace BGW.MANAGER.FoodChartMenuManager
         DBManager _conManager = new DBManager();
         FoodChartMenuModel _foodChartModel = new FoodChartMenuModel();
         MenuCategoryModel _categoryModel = new MenuCategoryModel();
+        FoodMenuCategoryWiseModel _foodMenuCategoryWiseModel = new FoodMenuCategoryWiseModel();
         #endregion
 
         #region Save FoodChartMenu
@@ -125,6 +126,20 @@ namespace BGW.MANAGER.FoodChartMenuManager
             }
         }
         #endregion
+
+
+        public List<FoodMenuCategoryWiseModel> LoadSubMenuTabItem(string categoryName)
+        {
+
+            try
+            {
+                return _conManager.GetDefaultCollection(_foodMenuCategoryWiseModel, "MapParameter_2", string.Format("[Settings].[spGetSubCategory] '{0}'", categoryName));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         
     }

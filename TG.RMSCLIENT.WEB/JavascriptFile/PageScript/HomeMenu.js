@@ -34,6 +34,8 @@ function LoadTabItem() {
 }
 
 function LoadSixMenuItem(categoryName) {
+    $(".tab-pane").html("");
+    $(".remove").html("");
     var footerdiv = '';
     var divRight = '';
     var liLeft = '';
@@ -60,7 +62,7 @@ function LoadSixMenuItem(categoryName) {
               '</div>' +
             '</div>';
     
-    footerdiv = '<a href="' + rootPath + '/FoodMenuCategoryWise/Index?categoryName=' + categoryName + '"> Read More </a> ';
+    footerdiv = '<a class="remove" href="' + rootPath + '/FoodMenuCategoryWise/Index?categoryName=' + categoryName + '"> Read More </a> ';
     
     divRight = '<div class="col-md-6">  <div class="mu-tab-content-right"> <ul class="mu-menu-item-nav">';
     

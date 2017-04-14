@@ -10,6 +10,7 @@ $(function () {
 });
 
 function LoadSubMenuTabItem(categoryName) {
+    //clear();
     var res = obj.Getdata_1({
         url: rootPath + '/FoodMenuCategoryWise/LoadSubMenuTabItem',
         values: { 'categoryName': categoryName },
@@ -29,14 +30,16 @@ function LoadSubMenuTabItem(categoryName) {
 }
 
 function LoadAllSubCategoryItem(SubCategoryName) {
+    //clear();
+    $(".tab-pane").html("");
     res = obj.Getdata_1({
         url: rootPath + '/FoodMenuCategoryWise/LoadAllSubCategoryItem',
         values: { 'SubCategoryName': SubCategoryName },
     });
     var result = '';
     var div = '';
-    div = '<div class="tab-pane fade in active" id="' + res[0].SubCategoryName + '">' +
-                '<div class="mu-tab-content-area">' +
+    div = '<div class="tab-pane fade in active" id="' + SubCategoryName + '">' +
+                '<div class="mu-tab-content-area" id="1">' +
                     '<div class="row">' +
                         '<div class="col-md-6">' +
                             '<div class="mu-tab-content-left">' +
@@ -74,13 +77,13 @@ function LoadAllSubCategoryItem(SubCategoryName) {
                         '<div class="media">' +
                             '<div class="media-left">' +
                                 '<a href="#">' +
-                                    '<img class="media-object" src="' + res[i].ActualPathRight + '" alt="img">' +
+                                    '<img id="IMG" class="media-object" src="' + res[i].ActualPathLeft + '" alt="img">' +
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
-                                '<h4 class="media-heading"><a href="#">' + res[i].MenuNameRight + '</a></h4>' +
-                                '<span class="mu-menu-price">$' + res[i].PriceRight + '</span>' +
-                                '<p>' + res[i].MenuDetailsRight + '</p>' +
+                                '<h4 class="media-heading"><a href="#">' + res[i].MenuNameLeft + '</a></h4>' +
+                                '<span class="mu-menu-price">$' + res[i].PriceLeft + '</span>' +
+                                '<p>' + res[i].MenuDetailsLeft + '</p>' +
                             '</div>' +
                         '</div>' +
                     '</li>';
@@ -88,5 +91,5 @@ function LoadAllSubCategoryItem(SubCategoryName) {
     }
     result = div + liLeft + '</ul> </div> </div>' + divRight + liRight + enddiv ;
     $('#tabMenuDetails').append(result);
-
+  
 }

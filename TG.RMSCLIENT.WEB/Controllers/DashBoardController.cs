@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BGW.MANAGER.ReservationManager;
 using BGW.MANAGER.Settings;
+using BGW.MANAGER.FoodChartMenuManager;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -60,7 +61,13 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
-        
+
+
+        public JsonResult LoadGallaryItem()
+        {
+            FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
+            return Json(_FoodChartMenuManager.LoadGallaryItem(), JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

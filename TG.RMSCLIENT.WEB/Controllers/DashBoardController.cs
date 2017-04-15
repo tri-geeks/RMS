@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using BGW.MANAGER.ReservationManager;
 using BGW.MANAGER.Settings;
 using BGW.MANAGER.FoodChartMenuManager;
+using BGW.IMSF.WEB.Models;
+using TG.RMSCLIENT.WEB.Security;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -13,7 +15,9 @@ namespace TG.RMSCLIENT.WEB.Controllers
     {
         //
         // GET: /DashBoard/
-
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
+        [CustomActionFilter]
         public ActionResult Index()
         {
             if (System.Web.HttpContext.Current.Session["UserID"] == null)

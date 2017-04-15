@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.IMSF.WEB.Models;
 using BGW.MANAGER.ReservationManager;
 using BGW.MODEL.Reservation;
 
@@ -11,6 +12,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
     public class ReservationController : Controller
     {
         ReservationManager _allocationManager = new ReservationManager();
+        [CustomAuthorizeAttribute]
         public ActionResult ReservationAllocation()
         {
             return View();

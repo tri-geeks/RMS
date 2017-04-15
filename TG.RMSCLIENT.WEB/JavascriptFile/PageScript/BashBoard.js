@@ -2,6 +2,7 @@
 var obj = new Suraya();
 var msg = new UIStyle();
 $(function () {
+   
     GridName = 'JQBookingList';
     Gridfooter = 'JQBookingpager';
 
@@ -29,7 +30,7 @@ $(function () {
     //------------------------------------
 
     JQBookingList = $('#JQBookingList');
-    MenuList(JQBookingList);
+    MenuList(JQBookingList);    
 });
 
 function MenuList(JQBookingList) {
@@ -110,3 +111,6 @@ function ReservationStatus() {
         select: $('#ReservationStatus')
     });
 }
+
+
+

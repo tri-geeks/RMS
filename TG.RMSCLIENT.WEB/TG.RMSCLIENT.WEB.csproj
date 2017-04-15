@@ -391,6 +391,7 @@
     <Content Include="JavascriptFile\PageScript\BashBoard.js" />
     <Content Include="JavascriptFile\PageScript\Booking.js" />
     <Content Include="JavascriptFile\PageScript\FoodMenu.js" />
+    <Content Include="JavascriptFile\PageScript\GallaryItem.js" />
     <Content Include="JavascriptFile\PageScript\HomeMenu.js" />
     <Content Include="JavascriptFile\PageScript\ReservationAllocation.js" />
     <Content Include="JavascriptFile\PageScript\Settings\MenuCategory.js" />

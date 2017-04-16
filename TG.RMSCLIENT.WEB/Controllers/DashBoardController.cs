@@ -39,6 +39,19 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
+        public JsonResult GetBookingSummary()
+        {
+            try
+            {
+                ReservationManager _objmanager = new ReservationManager();
+                return Json(_objmanager.GetBookingSummary(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public JsonResult GetReservationCategory()
         {
             try

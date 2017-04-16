@@ -113,6 +113,18 @@ namespace BGW.MANAGER.ReservationManager
             }
         }
 
+        public List<BookingModel> GetBookingSummary()
+        {
+            try
+            {
+                return _conManager.GetDefaultCollection(_bookingModel, "MapParameter_2", string.Format("[Reservation].[spGetBookingSummary]"));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public BookingModel CkeckAvailability(Int32 Qty, DateTime BookingDate, Int64 BookingType)
         {
             try

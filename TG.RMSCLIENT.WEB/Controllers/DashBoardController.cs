@@ -8,6 +8,7 @@ using BGW.MANAGER.Settings;
 using BGW.MANAGER.FoodChartMenuManager;
 using BGW.IMSF.WEB.Models;
 using TG.RMSCLIENT.WEB.Security;
+using BGW.MODEL.Reservation;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -85,6 +86,31 @@ namespace TG.RMSCLIENT.WEB.Controllers
             FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
             return Json(_FoodChartMenuManager.LoadGallaryItem(), JsonRequestBehavior.AllowGet);
         }
+
+        #region Update Booking Status
+        public ActionResult UpdateBookingStatus()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult UpdateBookingStatusC(List<BookingModel> BookingList)
+        {
+            try
+            {
+                foreach(BookingModel bookingItem in BookingList)
+                {
+                    bookingItem.Updated();                    
+                }
+                return Json(0);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        #endregion
 
     }
 }

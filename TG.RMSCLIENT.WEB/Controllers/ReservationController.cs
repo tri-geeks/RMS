@@ -74,5 +74,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        
     }
 }

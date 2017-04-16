@@ -402,6 +402,7 @@
     <Content Include="JavascriptFile\PageScript\Settings\SubCategory.js" />
     <Content Include="JavascriptFile\PageScript\Settings\UserInformation.js" />
     <Content Include="JavascriptFile\PageScript\SubMenuCategoryWise.js" />
+    <Content Include="JavascriptFile\PageScript\UpdateBooking.js" />
     <Content Include="JavascriptFile\PageScript\ViewMenulist.js" />
     <Content Include="JavascriptFile\plugins\grid.addons.js" />
     <Content Include="JavascriptFile\plugins\grid.postext.js" />
@@ -608,6 +609,7 @@
     <Content Include="Views\Reservation\ReservationAllocation.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\FoodMenuCategoryWise\FoodMenuCategoryWise.cshtml" />
+    <Content Include="Views\DashBoard\UpdateBookingStatus.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using BGW.MANAGER.ReservationManager;
 using BGW.MANAGER.Settings;
+using BGW.MANAGER.FoodChartMenuManager;
+using BGW.IMSF.WEB.Models;
+using TG.RMSCLIENT.WEB.Security;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -12,7 +15,9 @@ namespace TG.RMSCLIENT.WEB.Controllers
     {
         //
         // GET: /DashBoard/
-
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
+        [CustomActionFilter]
         public ActionResult Index()
         {
             if (System.Web.HttpContext.Current.Session["UserID"] == null)
@@ -29,6 +34,19 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 return Json(_objmanager.GetBookingList(Convert.ToInt64(BookingType),BookingDate, Convert.ToInt64(BookingStatus)), JsonRequestBehavior.AllowGet);
             }
             catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public JsonResult GetBookingSummary()
+        {
+            try
+            {
+                ReservationManager _objmanager = new ReservationManager();
+                return Json(_objmanager.GetBookingSummary(), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -60,7 +78,13 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
-        
+
+
+        public JsonResult LoadGallaryItem()
+        {
+            FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
+            return Json(_FoodChartMenuManager.LoadGallaryItem(), JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

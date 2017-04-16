@@ -1,7 +1,9 @@
 ﻿var JQBookingList;
+var JQBookingSummary;
 var obj = new Suraya();
 var msg = new UIStyle();
 $(function () {
+   
     GridName = 'JQBookingList';
     Gridfooter = 'JQBookingpager';
 
@@ -26,10 +28,15 @@ $(function () {
         JQBookingList.trigger('reloadGrid', [{ 'BookingType': bookingType, 'BookingDate': bookingDate, 'BookingStatus': bookingStatus }]);
     });
 
+    
     //------------------------------------
 
     JQBookingList = $('#JQBookingList');
-    MenuList(JQBookingList);
+    MenuList(JQBookingList);  
+
+    //***********************************
+    JQBookingSummary = $('#JQBookingSummary');
+    BookingSummary(JQBookingSummary);
 });
 
 function MenuList(JQBookingList) {
@@ -110,3 +117,59 @@ function ReservationStatus() {
         select: $('#ReservationStatus')
     });
 }
+
+
+
+function BookingSummary(JQBookingSummary) {
+    JQBookingSummary.jqGrid({
+        url: rootPath + '/DashBoard/GetBookingSummary',
+        //postData: { 'BookingType': '0', 'BookingDate': '', 'BookingStatus': '0' },
+        mtype: "GET",
+        styleUI: 'Bootstrap',
+        datatype: "json",
+        colModel: [
+            { label: 'Booking Name', name: 'TypeName', key: true, width: 300, hidden: false },
+            { label: 'Booking Qty', name: 'BookingQty', width: 250, editable: false },
+            { label: 'Status', name: 'StatusName', width: 250, editable: false },
+            {
+                label: 'Booking Date', name: 'BookingDate', width: 300,
+                editrules: { required: true },
+                formatter: 'date',
+                formatoptions: {
+                    newformat: 'm/d/Y'
+                },
+
+            }
+
+        ],
+        viewrecords: true,
+        height: 200,
+        rowNum: 500,
+        pager: "#JQBookingSummarypager",
+        footerrow: true,
+        userDataOnFooter: true,
+        beforeSelectRow: function (rowid, e) {
+            //var selectedRow = JQMenuListGrid.jqGrid('getRowData', rowid);
+            var $self = $(this),
+                $td = $(e.target).closest("td"),
+                rowid = $td.closest("tr.jqgrow").attr("id"),
+                iCol = $.jgrid.getCellIndex($td[0]),
+                cm = $self.jqGrid("getGridParam", "colModel");
+
+            //var colSumTotalPices = JQBookingSummary.jqGrid("getCol", 'BookingQty', false, 'sum');
+            //JQBookingSummary.jqGrid('footerData', 'set', { BookingQty: 'Total: ' + colSumTotalPices });
+
+            //if (cm[iCol].name === "LinkButton" && e.target.tagName.toUpperCase() === "A") {
+            //    JQBookingList.jqGrid('restoreRow', rowid)
+            //    return false; // don't select the row on click
+            //}
+            //if (cm[iCol].name === "LinkButton" && e.target.tagName.toUpperCase() === "SPAN") {
+            //    JQBookingList.jqGrid('saveRow', rowid)
+            //    return false;
+            //}
+        },
+
+    });
+}
+
+var intervalID = setInterval(function () { JQBookingSummary.trigger("reloadGrid");; }, 5000);

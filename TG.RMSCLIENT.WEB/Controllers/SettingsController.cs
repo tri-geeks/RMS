@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.IMSF.WEB.Models;
 using BGW.MANAGER.Settings;
 using BGW.MODEL.Settings;
 using BGW.MODEL.Settings.UserSettingsModel;
@@ -17,6 +18,8 @@ namespace TG.RMSCLIENT.WEB.Controllers
         SettingsManager _settingManager = new SettingsManager();
         #endregion
         #region User Informatio
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
         [CustomActionFilter]
         public ActionResult UserInformation()
         {
@@ -59,6 +62,8 @@ namespace TG.RMSCLIENT.WEB.Controllers
         #endregion
 
         #region Permission
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
         [CustomActionFilter]
         public ActionResult MenuPermission()
         {
@@ -97,6 +102,8 @@ namespace TG.RMSCLIENT.WEB.Controllers
         #endregion
 
         #region Menu Category
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
         [CustomActionFilter]
         public ActionResult MenuCategory()
         {
@@ -137,6 +144,8 @@ namespace TG.RMSCLIENT.WEB.Controllers
         #endregion
 
         #region Menu Sub Category 
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
         [CustomActionFilter]
         public ActionResult MenuSubCategory()
         {       
@@ -189,6 +198,9 @@ namespace TG.RMSCLIENT.WEB.Controllers
         #endregion
 
         #region Reservation Type
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
+        [CustomActionFilter]
         public ActionResult ReservationType()
         {
             return View();

@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BGW.IMSF.WEB.Models;
+using TG.RMSCLIENT.WEB.Security;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -14,12 +16,17 @@ namespace TG.RMSCLIENT.WEB.Controllers
         //
         // GET: /FoodMenu/
         FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
+        [CustomActionFilter]
         public ActionResult FoodMenuA()
         {
             return View();
         }
 
-
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        [CustomAuthorizeAttribute]
+        [CustomActionFilter]
         public ActionResult ViewMenuList()
         {
             return View();

@@ -71,7 +71,7 @@ function LoadSixMenuItem(categoryName) {
                     '<div class="media">' +
                         '<div class="media-left">' +
                             '<a href="#">' +
-                                '<img class="media-object" src="' + res[i].ActualPathLeft + '" alt="img">' +
+                                '<img class="media-object" src="' + res[i].VirtualPathLeft + '" alt="img">' +
                             '</a>' +
                         '</div>' +
                         '<div class="media-body">' +
@@ -86,7 +86,7 @@ function LoadSixMenuItem(categoryName) {
                     '<div class="media">' +
                         '<div class="media-left">' +
                             '<a href="#">' +
-                                '<img class="media-object" src="' + res[i].ActualPathRight + '" alt="img">' +
+                                '<img class="media-object" src="' + res[i].VirtualPathRight + '" alt="img">' +
                             '</a>' +
                         '</div>' +
                         '<div class="media-body">' +

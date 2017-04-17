@@ -37,7 +37,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw;
             }
         }
-        [OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1000, VaryByParam = "SubCategoryName")]
+        //[OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1000, VaryByParam = "SubCategoryName")]
         public JsonResult LoadAllSubCategoryItem(string SubCategoryName)
         {
             try

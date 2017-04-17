@@ -6,6 +6,7 @@ $(function () {
         var categoryName = $(this).attr('href').replace('#', '');
         LoadSixMenuItem(categoryName);
         
+        
     })
 });
 
@@ -48,7 +49,7 @@ function LoadSixMenuItem(categoryName) {
         values: {'categoryName':categoryName},
     });
     
-    div = '<div class="tab-pane fade in active" id="' + categoryName + '">' +
+    div = ' <div class="tab-pane fade in active" id="' + categoryName + '">' +
                 '<div class="mu-tab-content-area">'+
                     '<div class="row">'+
                         '<div class="col-md-6">'+
@@ -98,6 +99,10 @@ function LoadSixMenuItem(categoryName) {
                 '</li>';
     }
     result = div + liLeft + '</ul> </div> </div>' + divRight + liRight + enddiv + footerdiv;
-    $('#tabMenuDetails').append(result);
-
+    
+    
+    setTimeout(function () {
+        $('#tabMenuDetails').append(result);
+    }, 500);
+    //return false;
     }

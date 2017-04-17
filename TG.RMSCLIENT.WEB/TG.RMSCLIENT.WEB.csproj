@@ -390,6 +390,7 @@
     <Content Include="JavascriptFile\js\install.txt" />
     <Content Include="JavascriptFile\js\jquery-1.11.0.min.js" />
     <Content Include="JavascriptFile\js\jquery.jqGrid.min.js" />
+    <Content Include="JavascriptFile\PageScript\BarSection.js" />
     <Content Include="JavascriptFile\PageScript\BashBoard.js" />
     <Content Include="JavascriptFile\PageScript\Booking.js" />
     <Content Include="JavascriptFile\PageScript\FoodMenu.js" />

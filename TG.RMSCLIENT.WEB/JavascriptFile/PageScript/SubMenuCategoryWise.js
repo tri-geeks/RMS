@@ -61,7 +61,7 @@ function LoadAllSubCategoryItem(SubCategoryName) {
                         '<div class="media">' +
                             '<div class="media-left">' +
                                 '<a href="#">' +
-                                    '<img class="media-object" src="' + res[i].ActualPathLeft + '" alt="img">' +
+                                    '<img class="media-object" src="' + res[i].VirtualPathLeft + '" alt="img">' +
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
@@ -77,7 +77,7 @@ function LoadAllSubCategoryItem(SubCategoryName) {
                         '<div class="media">' +
                             '<div class="media-left">' +
                                 '<a href="#">' +
-                                    '<img id="IMG" class="media-object" src="' + res[i].ActualPathLeft + '" alt="img">' +
+                                    '<img id="IMG" class="media-object" src="' + res[i].VirtualPathLeft + '" alt="img">' +
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
@@ -90,6 +90,10 @@ function LoadAllSubCategoryItem(SubCategoryName) {
         }
     }
     result = div + liLeft + '</ul> </div> </div>' + divRight + liRight + enddiv ;
-    $('#tabMenuDetails').append(result);
+    //$('#tabMenuDetails').append(result);
+
+    setTimeout(function () {
+        $('#tabMenuDetails').append(result);
+    }, 500);
   
 }

@@ -16,9 +16,9 @@ namespace TG.RMSCLIENT.WEB.Controllers
         // GET: /FoodMenuCategoryWise/
 
         FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
-        [CustomAuthorizeAttribute]
-        [CustomActionFilter]
+        //[OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        //[CustomAuthorizeAttribute]
+        //[CustomActionFilter]
         public ActionResult Index(string categoryName)
         {
             ViewBag.categoryName = categoryName;

@@ -29,5 +29,11 @@ namespace TG.RMSCLIENT.WEB.Controllers
             return Json(_foodChartMenuManager.LoadSixMenuItem(categoryName), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult LoadBarItem()
+        {
+            //var list = _foodChartMenuManager.LoadSixMenuItem();
+            return Json(_foodChartMenuManager.LoadBarItem(), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

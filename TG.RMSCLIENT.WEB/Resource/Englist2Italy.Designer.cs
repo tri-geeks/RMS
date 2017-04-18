@@ -59,5 +59,392 @@ namespace TG.RMSCLIENT.WEB.Resource {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RIGUARDO A NOI.
+        /// </summary>
+        public static string ABOUT_US {
+            get {
+                return ResourceManager.GetString("ABOUT_US", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BBQ.
+        /// </summary>
+        public static string BBQ {
+            get {
+                return ResourceManager.GetString("BBQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BLOG.
+        /// </summary>
+        public static string BLOG {
+            get {
+                return ResourceManager.GetString("BLOG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colazione Articoli.
+        /// </summary>
+        public static string Breakfast_Items {
+            get {
+                return ResourceManager.GetString("Breakfast_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sfoglia più.
+        /// </summary>
+        public static string BROWSE_MORE {
+            get {
+                return ResourceManager.GetString("BROWSE_MORE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to caffè Articoli.
+        /// </summary>
+        public static string Coffee_Items {
+            get {
+                return ResourceManager.GetString("Coffee_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contattaci.
+        /// </summary>
+        public static string Contact_Us {
+            get {
+                return ResourceManager.GetString("Contact_Us", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CONTRARRE.
+        /// </summary>
+        public static string CONTRACT {
+            get {
+                return ResourceManager.GetString("CONTRACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I clienti.
+        /// </summary>
+        public static string Customers {
+            get {
+                return ResourceManager.GetString("Customers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delizioso.
+        /// </summary>
+        public static string Delicious {
+            get {
+                return ResourceManager.GetString("Delicious", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scoprire.
+        /// </summary>
+        public static string Discover {
+            get {
+                return ResourceManager.GetString("Discover", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indirizzo email.
+        /// </summary>
+        public static string Email_Address {
+            get {
+                return ResourceManager.GetString("Email_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fresco.
+        /// </summary>
+        public static string Fresh {
+            get {
+                return ResourceManager.GetString("Fresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DAL NOSTRO BLOG.
+        /// </summary>
+        public static string FROM_OUR_BLOG {
+            get {
+                return ResourceManager.GetString("FROM_OUR_BLOG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GALLERIA.
+        /// </summary>
+        public static string GALLERY {
+            get {
+                return ResourceManager.GetString("GALLERY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get In Touch.
+        /// </summary>
+        public static string Get_In_Touch {
+            get {
+                return ResourceManager.GetString("Get_In_Touch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alimenti verdi.
+        /// </summary>
+        public static string GREEN_FOODS {
+            get {
+                return ResourceManager.GetString("GREEN_FOODS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CASA.
+        /// </summary>
+        public static string HOME {
+            get {
+                return ResourceManager.GetString("HOME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caldo.
+        /// </summary>
+        public static string Hot {
+            get {
+                return ResourceManager.GetString("Hot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ultime notizie.
+        /// </summary>
+        public static string Latest_News {
+            get {
+                return ResourceManager.GetString("Latest_News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pranzo Articoli.
+        /// </summary>
+        public static string Lunch_Items {
+            get {
+                return ResourceManager.GetString("Lunch_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fare un.
+        /// </summary>
+        public static string Make_A {
+            get {
+                return ResourceManager.GetString("Make_A", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prenotare.
+        /// </summary>
+        public static string Make_Reservation {
+            get {
+                return ResourceManager.GetString("Make_Reservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MENU.
+        /// </summary>
+        public static string MENU {
+            get {
+                return ResourceManager.GetString("MENU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Messaggio.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IL NOSTRO BAR.
+        /// </summary>
+        public static string OUR_BAR {
+            get {
+                return ResourceManager.GetString("OUR_BAR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La nostra Galleria.
+        /// </summary>
+        public static string Our_Gallery {
+            get {
+                return ResourceManager.GetString("Our_Gallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IL NOSTRO MENU.
+        /// </summary>
+        public static string OUR_MENU {
+            get {
+                return ResourceManager.GetString("OUR_MENU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il nostro ricezione.
+        /// </summary>
+        public static string Our_Reception {
+            get {
+                return ResourceManager.GetString("Our_Reception", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefono.
+        /// </summary>
+        public static string Phone {
+            get {
+                return ResourceManager.GetString("Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LEGGI DI PIÙ.
+        /// </summary>
+        public static string READ_MORE {
+            get {
+                return ResourceManager.GetString("READ_MORE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prenotazione.
+        /// </summary>
+        public static string Reservation {
+            get {
+                return ResourceManager.GetString("Reservation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resevation.
+        /// </summary>
+        public static string RESEVATION {
+            get {
+                return ResourceManager.GetString("RESEVATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soddisfatto.
+        /// </summary>
+        public static string Satisfied {
+            get {
+                return ResourceManager.GetString("Satisfied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invia messaggio.
+        /// </summary>
+        public static string Send_Message {
+            get {
+                return ResourceManager.GetString("Send_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to masalas PICCANTI.
+        /// </summary>
+        public static string SPICY_MASALAS {
+            get {
+                return ResourceManager.GetString("SPICY_MASALAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soggetto.
+        /// </summary>
+        public static string Subject {
+            get {
+                return ResourceManager.GetString("Subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Testimonianze.
+        /// </summary>
+        public static string Testimonials {
+            get {
+                return ResourceManager.GetString("Testimonials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PER IL CIBO RE.
+        /// </summary>
+        public static string TO_THE_KING_FOOD {
+            get {
+                return ResourceManager.GetString("TO_THE_KING_FOOD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to benvenuto.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Benvenuto a.
+        /// </summary>
+        public static string Welcome_to {
+            get {
+                return ResourceManager.GetString("Welcome_to", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ciò che i clienti dicono.
+        /// </summary>
+        public static string What_Customers_Say {
+            get {
+                return ResourceManager.GetString("What_Customers_Say", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Il tuo nome.
+        /// </summary>
+        public static string Your_Name {
+            get {
+                return ResourceManager.GetString("Your_Name", resourceCulture);
+            }
+        }
     }
 }

@@ -159,7 +159,7 @@ namespace BGW.MANAGER.FoodChartMenuManager
 
             try
             {
-                return _conManager.GetDefaultCollection(_foodMenuCategoryWiseModel, "MapParameter_3", string.Format("[Settings].[spGetSubCategoryDetails] "));
+                return _conManager.GetDefaultCollection(_foodMenuCategoryWiseModel, "MapParameter_3", string.Format("[Settings].[spGetGallaryItems]"));
             }
             catch (Exception ex)
             {
@@ -167,6 +167,19 @@ namespace BGW.MANAGER.FoodChartMenuManager
             }
         }
 
-        
+        public List<FoodChartMenuModel> LoadBarItem()
+        {
+            
+            try
+            {
+                return _conManager.GetDefaultCollection(_foodChartModel, "MapParameter_2", string.Format("spGetBarItems"));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+       
     }
 }

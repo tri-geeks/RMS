@@ -21,7 +21,7 @@ namespace BGW.MANAGER.Email
             try
             {
                 _mail.From = fromAddress;
-
+                _mail.To.Add(objEmailCriteriaVM.ToEmailAddress);
                 if (!string.IsNullOrEmpty(Subject))
                 {
                     _mail.Subject = Subject;

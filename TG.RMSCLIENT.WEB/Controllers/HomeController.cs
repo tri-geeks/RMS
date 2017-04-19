@@ -95,10 +95,13 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             try
             {
-                string UrlConfirm = string.Format("Booking/ConfirmBooking?bookingId={0}",Id);
-                string UrlCanceal = string.Format("Booking/CancealedBooking?bookingId={0}", Id);
+                var UrlConfirm = Url.Action("ConfirmBooking", "Booking", new { bookingId = Id }, protocol: Request.Url.Scheme);
+                var UrlCancel = Url.Action("CancealedBooking", "Booking", new { bookingId = Id }, protocol: Request.Url.Scheme);
+                //string.Format("Booking/ConfirmBooking?bookingId={0}",Id);
+                //string UrlCanceal = string.Format("Booking/CancealedBooking?bookingId={0}", Id);
                 string htmlConform = "<p>If you want confirm booking then click on confirm link<span><a href="+ UrlConfirm + ">Confirm</a></span></p>"+"<br/>"+
-                                        "<p>If you want canceal booking then click on canceal link<span><a href=" + UrlCanceal + ">Canceal</a></span></p>";
+                                        "<p>If you want cancel booking then click on cancel link<span><a href=" + UrlCancel + ">Cancel</a></span></p>";
+                //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                 return htmlConform;
             }
             catch (Exception)

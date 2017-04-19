@@ -16,15 +16,15 @@ namespace TG.RMSCLIENT.WEB.Controllers
         // GET: /FoodMenuCategoryWise/
 
         FoodChartMenuManager _FoodChartMenuManager = new FoodChartMenuManager();
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
-        [CustomAuthorizeAttribute]
-        [CustomActionFilter]
+        //[OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        //[CustomAuthorizeAttribute]
+        //[CustomActionFilter]
         public ActionResult Index(string categoryName)
         {
             ViewBag.categoryName = categoryName;
             return View("FoodMenuCategoryWise");
         }
-        [OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1000, VaryByParam = "categoryName")]
+       // [OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1000, VaryByParam = "categoryName")]
         public JsonResult LoadSubMenuTabItem(string categoryName)
         {
             try
@@ -37,7 +37,7 @@ namespace TG.RMSCLIENT.WEB.Controllers
                 throw;
             }
         }
-        [OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1000, VaryByParam = "SubCategoryName")]
+        //[OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 1000, VaryByParam = "SubCategoryName")]
         public JsonResult LoadAllSubCategoryItem(string SubCategoryName)
         {
             try

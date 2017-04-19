@@ -121,6 +121,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\Englist2Italy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Englist2Italy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Italy2English.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Italy2English.resx</DependentUpon>
+    </Compile>
     <Compile Include="Security\CustomActionFilter.cs" />
     <Compile Include="Security\CustomAuthorizeAttribute.cs" />
   </ItemGroup>
@@ -390,6 +400,7 @@
     <Content Include="JavascriptFile\js\install.txt" />
     <Content Include="JavascriptFile\js\jquery-1.11.0.min.js" />
     <Content Include="JavascriptFile\js\jquery.jqGrid.min.js" />
+    <Content Include="JavascriptFile\PageScript\BarSection.js" />
     <Content Include="JavascriptFile\PageScript\BashBoard.js" />
     <Content Include="JavascriptFile\PageScript\Booking.js" />
     <Content Include="JavascriptFile\PageScript\FoodMenu.js" />
@@ -610,6 +621,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\FoodMenuCategoryWise\FoodMenuCategoryWise.cshtml" />
     <Content Include="Views\DashBoard\UpdateBookingStatus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\Englist2Italy.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Englist2Italy.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Italy2English.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Italy2English.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

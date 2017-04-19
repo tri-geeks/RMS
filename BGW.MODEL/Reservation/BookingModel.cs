@@ -151,18 +151,6 @@ namespace BGW.MODEL.Reservation
             };
         }
 
-        public object MapParameter_2(IDataReader reader)
-        {
-            return new BookingModel
-            {
-                
-                _BookingDate = reader.GetDateTime("BookingDate"),                
-                _BookingQty = reader.GetToString("BookingQty"), 
-                _StatusName = reader.GetToString("StatusName"),
-                _TypeName = reader.GetToString("TypeName")
-            };
-        }
-
         public object MapParameter_1(IDataReader reader)
         {
             return new BookingModel

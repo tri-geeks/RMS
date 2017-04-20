@@ -44,34 +44,51 @@ namespace TG.RMSCLIENT.WEB.Controllers
         [HttpPost]
         public JsonResult FoodChartMenu(FoodChartMenuModel foodChartMenumodel, HttpPostedFileBase file)
         {
-            var filename = Path.GetFileName(file.FileName);
-            var actualpath = Path.Combine(Server.MapPath("~/MenuIMG/"), filename);
-            var Virtualpath = @"/MenuIMG/" + filename;
-
-            if (foodChartMenumodel.VirtualPath == null)
+            try
             {
-                foodChartMenumodel.VirtualPath = Virtualpath;
-                foodChartMenumodel.ActualPath = actualpath;
-                file.SaveAs(actualpath);
+                var filename ="";
+                var actualpath = "";
+                var Virtualpath = "";
+                if(file != null)
+                {
+                     filename = Path.GetFileName(file.FileName);
+                     actualpath = Path.Combine(Server.MapPath("~/MenuIMG/"), filename);
+                     Virtualpath = @"/MenuIMG/" + filename;
+                }
+                //var filename = Path.GetFileName(file.FileName);
+                //var actualpath = Path.Combine(Server.MapPath("~/MenuIMG/"), filename);
+                //var Virtualpath = @"/MenuIMG/" + filename;
+
+                if (foodChartMenumodel.VirtualPath == null)
+                {
+                    foodChartMenumodel.VirtualPath = Virtualpath;
+                    foodChartMenumodel.ActualPath = actualpath;
+                    file.SaveAs(actualpath);
+                }
+                else if (file != null && foodChartMenumodel.VirtualPath != null)
+                {
+                    var DeleteImg = Server.MapPath("~/MenuIMG/") + Path.GetFileName(foodChartMenumodel.VirtualPath);
+                    System.IO.File.Delete(DeleteImg);
+                    foodChartMenumodel.VirtualPath = Virtualpath;
+                    foodChartMenumodel.ActualPath = actualpath;
+                    file.SaveAs(actualpath);
+                }
+
+                if (foodChartMenumodel.MenuID == 0)
+                    foodChartMenumodel.Added();
+                else
+                    foodChartMenumodel.Updated();
+
+                List<FoodChartMenuModel> foodchartlist = new List<FoodChartMenuModel>();
+                foodchartlist.Add(foodChartMenumodel);
+                _FoodChartMenuManager.SaveFoodChartMenu(foodchartlist);
+                return Json("success");
             }
-            else
+            catch (Exception)
             {
-                var DeleteImg = Server.MapPath("~/MenuIMG/") + Path.GetFileName(foodChartMenumodel.VirtualPath);
-                System.IO.File.Delete(DeleteImg);
-                foodChartMenumodel.VirtualPath = Virtualpath;
-                foodChartMenumodel.ActualPath = actualpath;
-                file.SaveAs(actualpath);
+                return Json("error");
+                throw;
             }
-
-            if (foodChartMenumodel.MenuID == 0)
-                foodChartMenumodel.Added();
-            else
-                foodChartMenumodel.Updated();
-
-            List<FoodChartMenuModel> foodchartlist = new List<FoodChartMenuModel>();
-            foodchartlist.Add(foodChartMenumodel);
-            _FoodChartMenuManager.SaveFoodChartMenu(foodchartlist);
-            return Json(0);
         }
 
         public JsonResult GetFoodMenuList ()

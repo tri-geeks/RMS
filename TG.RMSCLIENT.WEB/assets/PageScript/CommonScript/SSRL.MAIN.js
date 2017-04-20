@@ -17,9 +17,9 @@
                 st.hideloading();
                 setTimeout(function () {
                     if (data =='success')
-                        st.success();
+                        st.messageSave();
                     else
-                        st.error();
+                        st.messageError();
                 }, 1000);
                 
             return false;
@@ -27,7 +27,7 @@
             error: function () {
                 st.hideloading();
                 setTimeout(function () {
-                    st.error();
+                    st.messageError();
                 }, 1000);
             	
             	return false;

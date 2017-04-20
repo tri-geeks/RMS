@@ -28,7 +28,7 @@
 
     this.messageSave = function (message) {
         $('#success span').append(message);
-        document.getElementById('warning').style.display = 'block';
+        document.getElementById('success').style.display = 'block';
         setTimeout(function () {
             $('#success span').empty();
             document.getElementById('success').style.display = 'none';

@@ -107,6 +107,7 @@ function FoodMenuList(JQFoodMenuList) {
         $('#MenuName').val(res.MenuName);
         $('#MenuDetails').val(res.MenuDetails);
         $('#VirtualPath').val(res.VirtualPath);
+        $('#ActualPath').val(res.ActualPath);
         $('#Currency').val(res.Currency);
         $('#Price').val(res.Price);
 

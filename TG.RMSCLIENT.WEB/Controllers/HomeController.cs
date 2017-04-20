@@ -111,6 +111,36 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
+        public string ConfirlHTML(string confirm,string cancel)
+        {
+            string html =
+                @"<!DOCTYPE html>
+                < html >
+                    < head >
+                     < meta charset = 'utf-8' />
+ 
+                     < title ></ title >
+ 
+                     < link href = 'assets/css/bootstrap.min.css' rel = 'stylesheet' />
+    
+                        < script src = assets/js/jquery.min.js ></ script >
+     
+                         < script src = 'assets/js/bootstrap.js' ></ script >
+                      </ head >
+                      < body >
+      
+                        < div class='container'>
+                        <div class='col-lg-12 col-md-12 col-sm-12 well' style='margin-top:2%;height:100%'>"+
+                            "<p> If want confirm booking, clik on confirm button<input type='button' class='btn btn-success' value='Confirm' onclick='window.open("+confirm+");'> "+
+                            "or want to cancel then please click cancel button<input type='button' class='btn btn-danger' value='Cancel' onclick='window.open("+cancel+");'> </p>" +
+                        @"</div>
+                    </div>
+                </body>
+                </html>";
+
+            return html;
+        }
+
 
 
         #region Ratings App

@@ -215,5 +215,20 @@ namespace BGW.MODEL.Menu
                 _priceRight = reader.GetToString("PriceRight"),
             };
         }
+
+        public object MapParameter_2(IDataReader reader)
+        {
+            return new FoodChartMenuModel
+            {
+                _MenuName = reader.GetToString("MenuName"),
+                _VirtualPath = reader.GetToString("VirtualPath"),
+                _Price = reader.GetDecimal("Price"),
+                _MenuDetails = reader.GetToString("MenuDetails"),
+                _MenuCategoryID = reader.GetInt64("MenuCategoryID"),
+            };
+        }
+
+
+        //MenuName,VirtualPath,Price,MenuDetails,MenuCategoryID
     }
 }

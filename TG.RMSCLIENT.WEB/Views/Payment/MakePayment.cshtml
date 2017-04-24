@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Make Payment";
+    Layout = "~/Views/Shared/_PaymentLayout.cshtml";
+}
+
+<style type="text/css">
+    #mu-reservation {
+        background-color: #fff;
+        display: inline;
+        float: left;
+        padding: 100px 0;
+        width: 100%;
+    }
+
+        #mu-reservation .mu-reservation-area .mu-reservation-content .mu-reservation-form button[type="submit"], button[type="button"] {
+            border: none;
+            margin-top: 20px;
+            margin-left: 15px;
+        }
+</style>
+
+
+<section id="mu-reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-reservation-area">
+                    <div class="mu-title">
+                        <span class="mu-subtitle">Make A</span>
+                        <h2 style="color:black">Payment</h2>
+                        <i class="fa fa-spoon"></i>
+                        <span class="mu-title-bar"></span>
+                    </div>
+                    <div class="mu-reservation-content">
+
+                        <form class="mu-reservation-form" method="post" action="/Payment/MakePaymentC">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="hidden" name="bookingId" id="bookingId" />
+                                            <input type="hidden" name="email" id="email" />
+                                            <input type="text" class="form-control" placeholder="Card Number" id="Number" name="Number" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Expiration Year" id="ExpirationYear" name="ExpirationYear" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Expiration Month" id="ExpirationMonth" name="ExpirationMonth" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Country" id="AddressCountry" name="AddressCountry" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Account Name" id="Name" name="Name" required>
+                                        </div>
+                                    </div>
+                                    @*<div class="col-md-12">
+                                       
+                                        <div class="col-md-6 form-group">
+                                           
+                                            @Html.CheckBox("Isbout", new { @id = "Isbout" })<span style="color: #444"> Isbout</span>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                          
+                                            @Html.CheckBox("IsGallary", new { @id = "IsGallary" })<span style="color: #444"> IsGallary</span>
+                                        </div>
+
+                                    </div>*@
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="CVC" id="Cvc" name="Cvc" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <div class="form-group">                                            
+                                            <input type="text" class="form-control" placeholder="Payment Amount" id="Amount" name="Amount" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <select class="form-control" name="Currency" id="Currency" required>
+                                                <option value="0">--Select Currency--</option>
+                                                <option value="1">$ Doller</option>
+                                                <option value="2">৳ Taka</option>
+                                                <option value="3">£ Pound</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="Description" name="Description" cols="15" rows="5" placeholder="Payment Description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>                              
+
+
+
+                                <div class="col-md-12">                                    
+                                    <button type="submit" class="mu-readmore-btn">Make Payment</button>
+                                </div>
+
+                               
+
+                            </div>                          
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

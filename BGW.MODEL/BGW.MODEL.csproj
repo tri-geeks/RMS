@@ -45,6 +45,8 @@
     <Compile Include="FoodBank\test.cs" />
     <Compile Include="Menu\FoodChartMenuModel.cs" />
     <Compile Include="Menu\FoodMenuCategoryWiseModel.cs" />
+    <Compile Include="Payment\CreditCardModel.cs" />
+    <Compile Include="Payment\PaymentInformationModel.cs" />
     <Compile Include="Production\ProductionEntry\DailyProductionMasterModel.cs" />
     <Compile Include="Production\ProductionEntry\DailyProductionModel.cs" />
     <Compile Include="Production\ProductionEntry\ShiftWiseProductionModel.cs" />

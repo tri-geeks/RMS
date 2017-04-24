@@ -20,15 +20,16 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             return View();
         }
-
-        public ActionResult ConfirmBooking(Int64 bookingId)
+       
+        public ActionResult ConfirmBooking(Int64 bookingId, string email)
         {
             try
             {
                 if (_reservationManager.GetBookingStatus(bookingId, 2) == null)
                     _reservationManager.UpdateBookingStatus(bookingId, 2);
-                return RedirectToAction("ConfrimationSuccess", "Booking");
-                
+                //return RedirectToAction("ConfrimationSuccess", "Booking");
+                return Redirect(string.Format("/Payment/MakePayment?bookingId={0}&email={1}", bookingId, email));
+
             }
             catch (Exception)
             {
@@ -37,11 +38,11 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
-        public ActionResult CancealedBooking(Int64 bookingId)
+        public ActionResult CancealedBooking(Int64 bookingId, string email)
         {
             try
             {
-                if(_reservationManager.GetBookingStatus(bookingId,3)==null)
+                if (_reservationManager.GetBookingStatus(bookingId, 3) == null)
                     _reservationManager.UpdateBookingStatus(bookingId, 3);
                 return RedirectToAction("CancealedSuccess", "Booking");
             }

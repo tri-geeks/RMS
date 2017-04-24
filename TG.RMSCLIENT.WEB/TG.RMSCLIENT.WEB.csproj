@@ -131,6 +131,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Italy2English.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resource\Language.Designer.cs" />
+    <Compile Include="Resource\Language.it.Designer.cs" />
     <Compile Include="Security\CustomActionFilter.cs" />
     <Compile Include="Security\CustomAuthorizeAttribute.cs" />
   </ItemGroup>
@@ -633,6 +635,8 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Italy2English.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resource\Language.it.resx" />
+    <EmbeddedResource Include="Resource\Language.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

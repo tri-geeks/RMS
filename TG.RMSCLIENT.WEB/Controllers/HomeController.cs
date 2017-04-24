@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using BGW.MANAGER.ReservationManager;
 using BGW.MODEL.Reservation;
 using BGW.MANAGER.Email;
+using System.Threading;
+using System.Globalization;
 
 namespace TG.RMSCLIENT.WEB.Controllers
 {
@@ -174,5 +176,20 @@ namespace TG.RMSCLIENT.WEB.Controllers
         }
         #endregion
 
+
+        public ActionResult ChangeLanguage(string SelectedLanguage)
+        {
+            if (SelectedLanguage != null)
+            {
+                Thread.CurrentThread.CurrentCulture =
+                    CultureInfo.CreateSpecificCulture(SelectedLanguage);
+                Thread.CurrentThread.CurrentUICulture =
+                    new CultureInfo(SelectedLanguage);
+                var cookie = new HttpCookie("Language");
+                cookie.Value = SelectedLanguage;
+                Response.Cookies.Add(cookie);
+            }
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

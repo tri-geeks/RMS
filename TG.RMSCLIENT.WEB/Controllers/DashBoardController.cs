@@ -98,15 +98,13 @@ namespace TG.RMSCLIENT.WEB.Controllers
         {
             try
             {
-                foreach(BookingModel bookingItem in BookingList)
-                {
-                    bookingItem.Updated();                    
-                }
-                return Json(0);
+                ReservationManager _objmanager = new ReservationManager();
+                _objmanager.UpdateBookingStatusAdmin(BookingList);
+                return Json("success");
             }
             catch (Exception)
             {
-
+                return Json("error");
                 throw;
             }
         }

@@ -150,6 +150,27 @@ namespace BGW.MANAGER.ReservationManager
                 throw;
             }
         }
+
+
+        public void UpdateBookingStatusAdmin(List<BookingModel> bookingList)
+        {
+            try
+            {
+                //string sql = string.Format("[Reservation].[spUpdateBookingStatus]  {0},{1}", bookingId, bookingStatus);
+                //_conManager.ExecuteNonQuery(sql);
+                foreach (BookingModel _bokingItem in bookingList)
+                {
+                    string sql = "";
+                    sql = string.Format("[Reservation].[spUpdateBookingStatus]  {0},{1}", _bokingItem.BookingID, _bokingItem.BookingStatus);
+                    _conManager.ExecuteNonQuery(sql);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         #endregion
 
 

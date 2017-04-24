@@ -41,10 +41,10 @@ $(function () {
         //formdata.append('UserID', $('#UserID').val());
         obj.addListWithForm(formdata, BookingList, 'BookingList');
         obj.Save({
-            url: rootPath + '/Settings/MenuSubCategoryC',
+            url: rootPath + '/DashBoard/UpdateBookingStatusC',
             form: formdata
         });
-        JQMenuSubCategoryList.trigger("reloadGrid");
+        JQBookingList.trigger("reloadGrid");
     });
    
 });

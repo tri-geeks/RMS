@@ -65,6 +65,34 @@
         /*section{
             background-color:black;
         }*/
+
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 50%;
+        }
+
+            .btn-circle.btn-lg {
+                width: 50px;
+                height: 50px;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.33;
+                border-radius: 25px;
+            }
+
+            .btn-circle.btn-xl {
+                width: 70px;
+                height: 70px;
+                padding: 10px 16px;
+                font-size: 24px;
+                line-height: 1.33;
+                border-radius: 35px;
+            }
     </style>
     
 </head>
@@ -124,6 +152,20 @@
         @RenderBody()        
     </div>    
      
+    <div id="fade2" style="width:100%;z-index:900;opacity:.9;background-color:black;margin-top:0%;position:fixed;top:0" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center">
+        <div id="" style="height:50%;height:50%;margin-left:.5%;margin-top:10%;background-color:white;z-index:1000;opacity:100">
+            <div id="btn" style="width:100%" class="col-lg-12 col-md-12">
+                <button type="button" class="btn btn-warning btn-circle btn-lg" id="ac" style="float:right;"><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+
+            <div id="details" style="width:100%" class="col-lg-12 col-md-12">
+                <p>Hello King Food Mini</p>
+            </div>
+        </div>
+
+    </div>
+
+
     <div id="fade" style="height: 768px;z-index:900;opacity:5; display:none" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center"></div>
     <div id="modal" class="center-div"><img id="loader" src="~/image/ajax-loader1.gif" /><br>Please wait..</div>
 

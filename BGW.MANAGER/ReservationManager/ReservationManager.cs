@@ -173,9 +173,6 @@ namespace BGW.MANAGER.ReservationManager
         }
         #endregion
 
-
-
-
         #region Rating
         /*
          * Create time 11.45 PM 4/9/17

@@ -8,7 +8,9 @@ $(function () {
         var reservationType = $('#ReservationTypeID').val();
         GetTime(reservationType);
     })
-
+    $('#datepicker').on('changeDate', function (ev) {
+        $(this).datepicker('hide');
+    });
     $('#BookingQty').blur(function () {
         var BookingDate = $('#datepicker').val();
         var reservationType = $('#ReservationTypeID').val();

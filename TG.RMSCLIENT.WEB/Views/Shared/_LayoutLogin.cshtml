@@ -29,7 +29,35 @@
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
-    
+    <style type="text/css">
+        .btn-circle {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 50%;
+        }
+
+            .btn-circle.btn-lg {
+                width: 50px;
+                height: 50px;
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.33;
+                border-radius: 25px;
+            }
+
+            .btn-circle.btn-xl {
+                width: 70px;
+                height: 70px;
+                padding: 10px 16px;
+                font-size: 24px;
+                line-height: 1.33;
+                border-radius: 35px;
+            }
+    </style>
 </head>
 
 <body > 
@@ -78,7 +106,20 @@
     <div>
         @RenderBody()        
     </div>    
-         
+    
+    <div id="fade2" style="width:100%;z-index:900;opacity:.9;background-color:black;margin-top:0%;position:fixed;top:0;display:none" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 center">
+        <div id="" style="height:50%;height:50%;margin-left:0%;margin-top:10%;background-color:white;z-index:1000;opacity:100">
+            <div id="btn" style="width:100%" class="col-lg-12 col-md-12">
+                <button type="button" class="btn btn-warning btn-circle btn-lg" id="ac" style="float:right;"><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+
+            <div id="details" style="width:100%" class="col-lg-12 col-md-12">
+                <p>Hello King Food Mini</p>
+            </div>
+        </div>
+
+    </div>
+    
     <section>
         <div class="alert alert-warning" id="warning" style="display: none; margin-left: 0px; max-height: 100px;min-height:80px; border-top: solid thin #ccc; bottom: 0; width: 100%; position: fixed; z-index: 900; padding: 2px 0 2px 1px">
             <strong>Warning!</strong> @*Password and Confirm Password must be same.*@<span></span>

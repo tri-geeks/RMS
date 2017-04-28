@@ -6,6 +6,17 @@ $(function () {
         var SubCategoryName = $(this).attr('href').replace('#', '');
         LoadAllSubCategoryItem(SubCategoryName);
 
+    });
+    
+
+    $(document).on('click', 'a.cc', function () {
+        $('#fade2').height($(window).height() - 20)        
+        $('#fade2').fadeIn();     
+       
+    });
+    $('#ac').click(function () {
+        $('#fade2').fadeOut();
+
     })
 });
 
@@ -60,12 +71,12 @@ function LoadAllSubCategoryItem(SubCategoryName) {
             liLeft += '<li>' +
                         '<div class="media">' +
                             '<div class="media-left">' +
-                                '<a href="#">' +
+                                '<a href="#" >' +
                                     '<img class="media-object" src="' + res[i].VirtualPathLeft + '" alt="img">' +
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
-                                '<h4 class="media-heading"><a href="#">' + res[i].MenuNameLeft + '</a></h4>' +
+                                '<h4 class="media-heading"><a href="#" class="cc">' + res[i].MenuNameLeft + '</a></h4>' +
                                 '<span class="mu-menu-price">$' + res[i].PriceLeft + '</span>' +
                                 '<p>' + res[i].MenuDetailsLeft + '</p>' +
                             '</div>' +
@@ -81,7 +92,7 @@ function LoadAllSubCategoryItem(SubCategoryName) {
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
-                                '<h4 class="media-heading"><a href="#">' + res[i].MenuNameLeft + '</a></h4>' +
+                                '<h4 class="media-heading"><a href="#" class="cc">' + res[i].MenuNameLeft + '</a></h4>' +
                                 '<span class="mu-menu-price">$' + res[i].PriceLeft + '</span>' +
                                 '<p>' + res[i].MenuDetailsLeft + '</p>' +
                             '</div>' +

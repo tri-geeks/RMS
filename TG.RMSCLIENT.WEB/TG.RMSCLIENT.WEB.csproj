@@ -357,8 +357,11 @@
     <Content Include="Global.asax" />
     <Content Include="image\ajax-loader1.gif" />
     <Content Include="image\ajax-loader.gif" />
+    <Content Include="image\background.jpg" />
     <Content Include="image\facebook.gif" />
+    <Content Include="image\favicon.ico" />
     <Content Include="image\Logo.png" />
+    <Content Include="image\Logo1.png" />
     <Content Include="JavascriptFile\Common\JQCommon.js" />
     <Content Include="JavascriptFile\css\ui.jqgrid-bootstrap-ui.css" />
     <Content Include="JavascriptFile\css\ui.jqgrid-bootstrap.css" />

@@ -24,7 +24,8 @@ $(function () {
     });
 
     //***************Load data ****************
-    $('#datepicker').change(function () {        
+    $('#datepicker').change(function () {                
+            $(this).datepicker('hide');        
         if ($('#datepicker').val() != null) {
             JQReservationAllocationList.setGridParam({ postData: { allocationDate: $('#datepicker').val() } });
             JQReservationAllocationList.trigger('reloadGrid', [{ allocationDate: $('#datepicker').val() }]);

@@ -51,7 +51,7 @@ $(function () {
             success: function (data) {
                 msg.hideloading();
                 if (data != 0 && data != 2)
-                    window.open('https://www.youtube.com/results?search_query=tumi+andhar+dekho');
+                    window.open(rootPath+'/1.html');
                 else if (data == 0)
                     msg.message('No availabe site');    
                 else if (data == 2)

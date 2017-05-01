@@ -10,8 +10,11 @@ $(function () {
     
 
     $(document).on('click', 'a.cc', function () {
-        $('#fade2').height($(window).height() - 20)        
-        $('#fade2').fadeIn();     
+       
+        $('#fade2').height($(window).height() - 20)
+        var menuMane = $(this).attr('href').replace('#', '');
+        ShowSingleMenuItem(menuMane)
+        $('#fade2').fadeIn();
        
     });
     $('#ac').click(function () {
@@ -20,8 +23,27 @@ $(function () {
     })
 });
 
+function ShowSingleMenuItem(menuMane) {
+
+    var res = obj.Getdata_1({
+        url: rootPath + '/FoodMenuCategoryWise/ShowSingleMenuItem',
+        values: { 'menuName': menuMane },
+
+    });
+   
+    $("#si").html("");
+    $('#si').append(
+           '<div class="col-lg-6 col-md-6">' +
+                       '<img class="media-object" src="' +res.VirtualPath + '" alt="img">' +
+                   '</div>' +
+
+                   '<div id="si" class="col-lg-6 col-md-6">' +
+                       '<h4> ' + res.MenuDetails + '</h4>' +
+          '</div>')
+}
+
 function LoadSubMenuTabItem(categoryName) {
-    //clear();
+   //clear();
     var res = obj.Getdata_1({
         url: rootPath + '/FoodMenuCategoryWise/LoadSubMenuTabItem',
         values: { 'categoryName': categoryName },
@@ -76,7 +98,7 @@ function LoadAllSubCategoryItem(SubCategoryName) {
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
-                                '<h4 class="media-heading"><a href="#" class="cc">' + res[i].MenuNameLeft + '</a></h4>' +
+                                '<h4 class="media-heading"><a href="#' + res[i].MenuNameLeft + '" class="cc">' + res[i].MenuNameLeft + '</a></h4>' +
                                 '<span class="mu-menu-price">$' + res[i].PriceLeft + '</span>' +
                                 '<p>' + res[i].MenuDetailsLeft + '</p>' +
                             '</div>' +
@@ -92,7 +114,7 @@ function LoadAllSubCategoryItem(SubCategoryName) {
                                 '</a>' +
                             '</div>' +
                             '<div class="media-body">' +
-                                '<h4 class="media-heading"><a href="#" class="cc">' + res[i].MenuNameLeft + '</a></h4>' +
+                                '<h4 class="media-heading"><a href="#'+ res[i].MenuNameLeft + '"class="cc">' + res[i].MenuNameLeft + '</a></h4>' +
                                 '<span class="mu-menu-price">$' + res[i].PriceLeft + '</span>' +
                                 '<p>' + res[i].MenuDetailsLeft + '</p>' +
                             '</div>' +

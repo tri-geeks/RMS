@@ -36,7 +36,7 @@ function LoadTabItem() {
 
 function LoadSixMenuItem(categoryName) {
     $(".tab-pane").html("");
-    $(".remove").html("");
+    $("receive kore").html("");
     var footerdiv = '';
     var divRight = '';
     var liLeft = '';

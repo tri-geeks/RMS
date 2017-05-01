@@ -51,5 +51,18 @@ namespace TG.RMSCLIENT.WEB.Controllers
             }
         }
 
+        public JsonResult ShowSingleMenuItem(string menuName)
+        {
+            try
+            {
+                return Json(_FoodChartMenuManager.ShowSingleMenuItem(menuName), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        
     }
 }

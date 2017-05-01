@@ -180,6 +180,18 @@ namespace BGW.MANAGER.FoodChartMenuManager
             }
         }
 
+        public FoodChartMenuModel ShowSingleMenuItem(string menuName)
+        {            
+            try
+            {
+                return _conManager.SingleCollection(_foodChartModel, "MapParameter_2", string.Format("spGetSingleItem '{0}'", menuName));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+       
        
     }
 }
